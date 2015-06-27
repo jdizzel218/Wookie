@@ -1,13 +1,4 @@
-import os
 import subprocess
-import socket
-
-
-
-def writelog(logfile):
-	pass
-	 
-
 
 
 def networkgather():
@@ -16,40 +7,31 @@ def networkgather():
 	netview = ("net", "view")
 	netuser = ("net", "user")
 	ipconfig = ("ipconfig", "/all")
-	systeminfo = ("systeminfo")
-	tasklist= ("tasklist")
-	powershell = ("powershell")
-	nbtstat = ("nbtstat", "-h")
+	#nbtstat = (" nbtstat", "-n") For some reason this command isn't being recognized.
 	netstat = ("netstat", "-o")
 	
-	cmdlist = [arp, netview, netuser, ipconfig, systeminfo, nbtstat, netstat]
+	cmdlist = [arp, netview, netuser, ipconfig, netstat]
 	
-	subprocess.Popen(powershell, 0, None, None, None, shell=True) #Open powershell so that commands run in memory.
+	
 	for i in cmdlist:
 			subprocess.Popen(i, 0, None, None, None, shell=True).wait() # loop through all the system information gathering commands.
 	
 	
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def systeminfogather():
+	
+	systeminfo = ("systeminfo")
+	tasklist= ("tasklist")
+	
+	cmdlist = [systeminfo, tasklist]
+	
+	for i in cmdlist:
+		subprocess.Popen(i, 0, None, None, None, shell=True).wait()
 
 
 def main():
+	systeminfogather()
 	networkgather()
-	
-	
 	
 main()
