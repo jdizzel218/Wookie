@@ -1,4 +1,5 @@
 import pygame, sys
+from GameObject import GameObject
 
 pygame.init()
 pygame.mixer.init()
@@ -32,16 +33,10 @@ while True:
 		if event.type == pygame.QUIT: sys.exit()
 		
 		if event.type == pygame.KEYDOWN:
-			
-			while event.key == pygame.K_RIGHT:
+			if event.key == pygame.K_RIGHT:
 				pygame.image.load("pikachu.png")
-				pygame.image.load("pikachu1.png")
-				pygame.image.load("pikachu2.png")
-				pygame.image.load("pikachu3.png")
 				x += 5
-			else:
-				break
-				
+			
 			if event.key == pygame.K_LEFT:
 				x -= 5
 			if event.key == pygame.K_DOWN:
