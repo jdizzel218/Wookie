@@ -31,16 +31,12 @@ class Hero():
 		
 	def hero_skills():
 		
-		skill_list = ["attack"], 
-		              ["defend"],
-		              ["magic"],
-		              ["inventory"],
-		              ["run"]
-		 
-		              
-		              
-	
-	
+		skill_list = ["attack"], ["defend"],["magic"],["inventory"],["run"]
+		 	
+	def take_damage(self,damage):
+		totalHealth = self.health - damage
+		return totalHealth
+		
 class Enemy():
 	
 	def __init__(self, sprite, level, health, job, weapon, item_drop, x, y):
@@ -52,7 +48,7 @@ class Enemy():
 		self.item_drop = item_drop
 		self.x         = x
 		self.y         = y
-		return
+		
 		
 	def have_weapon(self):
 		if self.weapon == '' or self.weapon == "None":
@@ -177,6 +173,7 @@ def main():
 	
 	
 	player1 = Hero()
+	player1.hero_stats()
 	 
 	pygame.display.update() 
 	
