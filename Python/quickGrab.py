@@ -27,8 +27,8 @@ x_pad = 464
 y_pad = 223
 
 def screenGrab(): #This grabs a screenshot and saves in the current working directory as a '.png' file.
-	box = (x_pad + 1,y_pad +1,x_pad + 640,y_pad + 480)
-	im = ImageGrab.grab(box)
+	box = ()
+	im = ImageGrab.grab()
 	im.save(CWD + '\\ful_snap__' + str(int(time.time())) + '.png', 'PNG') #(directory, (name, timestamp), fileformat)
 	
 
