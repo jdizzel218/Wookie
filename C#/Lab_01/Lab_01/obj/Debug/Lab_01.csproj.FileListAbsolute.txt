@@ -1,0 +1,5 @@
+C:\Users\mcranfor\Documents\GitHub\wookie\C#\Lab_01\Lab_01\bin\Debug\Lab_01.exe
+C:\Users\mcranfor\Documents\GitHub\wookie\C#\Lab_01\Lab_01\bin\Debug\Lab_01.pdb
+C:\Users\mcranfor\Documents\GitHub\wookie\C#\Lab_01\Lab_01\obj\Debug\Lab_01.csprojResolveAssemblyReference.cache
+C:\Users\mcranfor\Documents\GitHub\wookie\C#\Lab_01\Lab_01\obj\Debug\Lab_01.exe
+C:\Users\mcranfor\Documents\GitHub\wookie\C#\Lab_01\Lab_01\obj\Debug\Lab_01.pdb
