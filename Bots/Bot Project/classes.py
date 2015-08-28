@@ -21,7 +21,34 @@
 #  MA 02110-1301, USA.
 #  
 #  
+import pyautogui
 
-
-class Cords():
-	pass
+class Keyboard():
+	
+	#Movement
+	UP    = 'up'    #pyautogui.press('up')
+	DOWN  = 'down'  #pyautogui.press('down')
+	LEFT  = 'left'  #pyautogui.press('left')
+	RIGHT = 'right' #pyautogui.press('right')
+	
+	#Buttons
+	A     = 'z'     #pyautogui.press('z')
+	B     = 'x'     #pyautogui.press('x')
+	
+	L     = 'a'     #pyautogui.press('a')
+	R     = 's'     #pyautogui.press('s')
+	
+	Z     = 'space' #pyautogui.press('space')
+	
+	
+	#C-Stick controls
+	CU    = 'u'     #pyautogui.press('u')
+	CD    = 'd'     #pyautogui.press('d')
+	CL    = 'l'     #pyautogui.press('l')
+	CR    = 'r'     #pyautogui.press('r')
+	
+	#Enter
+	S     = 'enter' #pyautogui.press('enter')
+	
+	
+	

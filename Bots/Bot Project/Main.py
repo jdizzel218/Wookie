@@ -37,13 +37,11 @@ from classes import *
 #   Global Variables   #
 ########################
 
+#655, 350
 
 
-
-def main():	
-	while True:
-		mouse = get_mouse_position()
-		print mouse
+def main():
+		
 	return 
 
 if __name__ == '__main__':
