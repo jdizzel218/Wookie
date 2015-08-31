@@ -29,13 +29,13 @@ namespace Lab_01
             string project = "Lab One";
 
             //This code displays the strings above, on the console
-            Console.WriteLine("Name: {0}", name);
-            Console.WriteLine("Course: {0}", course);
-            Console.WriteLine("Section: {0}", section);
-            Console.WriteLine("Project: {0}", project);
+            WriteLine("Name: {0}", name);
+            WriteLine("Course: {0}", course);
+            WriteLine("Section: {0}", section);
+            WriteLine("Project: {0}", project);
 
             //This code freezes the Console until the Enter Key is pressed
-            Console.WriteLine("Press Enter to continue...");
+            WriteLine("Press Enter to continue...");
             ReadKey(true);
             
         }//End Main()

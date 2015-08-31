@@ -1,0 +1,63 @@
+----- 8/28/2015 -----
+C# Programming Notes 
+
+//init
+'''
+Programs consist of only three things:
+	1. variables - store things
+	2. methods - do things (behavior)
+	3. objects - are 
+'''
+//Definitions
+orphan - an object whose reference has been lost.
+
+//Notes
+I. Value-Type (light weight objects)
+	a. Each variable is a bucket that is a certain size and shape.
+	b. int - size: 32 bits, shape: integer, value: ? (? = garbage).
+		1. Garbage in => Garbage out.
+	c. double - size: 64 bits, shape: floating point, value: ?.
+	d. char   - size: 16 bits, shape: Unicode character
+	e. bool   - size: 8 bits,  shape: integer
+
+II. Reference-Type (Regular objects)
+	a. string - size: 32 bits, shape: object, value: ?
+	b. console
+	c. math 
+
+III. Variables
+	a. 2 types: constant and variable
+	b. const - after initialization, cannot change value of variable.
+IV. Programs and Data
+	a. Data 
+		1. Central to the idea of how a program works
+		2. Every program that is ever written does something to data
+		
+	b. Simple Data Types
+	c. Variables and constants
+	d. Declarations - when we declare variables
+	e. Assignment - assignment operator = ( '=' )
+	f. Input and Output - writing and reading respectively.
+	g. Style - helps give a regular way of writing code to help make code readable.
+
+
+
+
+----- 8/31/2015 -----
+
+
+
+
+
+
+
+I. Identifiers 
+	A. (int iData = 32); an identifier is the name of the variable. It contains the 'address' in 
+	   	memory that the computer uses to find the data the variable refernces to.
+
+	B. Must begin with either a letter or an underscore character i.e [a-z, A-Z, _ ], the remaining
+		characters may be letters, digits, or the underscore character [ a-z, A-Z, 0-9, _], they
+		can also have any length. They are case-sensitive.
+
+
+
