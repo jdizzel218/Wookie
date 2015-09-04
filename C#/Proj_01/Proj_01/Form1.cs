@@ -16,7 +16,7 @@ namespace Proj_01
         private double _rightop = 0.0;
         private double _result  = 0.0;
         
-        public FrmMain()
+        public FrmMain() //constructor
         {
             InitializeComponent();
         }
@@ -73,5 +73,7 @@ namespace Proj_01
             _rightop = int.Parse(TxtBoxRightOp.Text);
             
         }
+
+        
     }
 }
