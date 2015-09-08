@@ -1,7 +1,14 @@
-﻿// Project: Lab 04
-// Name: Matthew L. Cranford
-// CS 1400 section 001
-// I hereby declare that the following
+﻿// File/Project Prolog
+// Name: Matthew Cranford
+// CS 1400 Section 001
+// Project: Lab_04
+// Date: 9/4/2015 700 PM
+//
+// I declare that the following code was written by me or provided 
+// by the instructor for this project. I understand that copying source
+// code from any other source constitutes cheating, and that I will receive
+// a zero on this project if I am found in violation of this policy.
+// ---------------------------------------------------------------------------
 
 
 using System;
