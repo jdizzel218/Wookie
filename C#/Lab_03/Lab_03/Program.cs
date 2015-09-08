@@ -16,32 +16,43 @@ using static System.Console;
 namespace Lab_03
 {
     static public class Program
-    {
+       
+    {/// <summary>
+    /// Purpose: To take input from the user and write the input to screen.
+    /// </summary>
         static public void Main()
         {
-            WriteLine("Hello! My name is Hal.");
-            Write("Please type in your name: ");
+            /// init variables.
+            string name;
+            int age;
+            double money;
+            string gender;
 
-            string name = Console.ReadLine();
+            WriteLine("Hello! My name is Hal."); //Says hello to user
+            Write("Please type in your name: "); //Gets users name
 
-            Write("Hello {0}, how old are you? ", name);
+            name = Console.ReadLine(); //stores users name in 'name'
 
-            int age = Convert.ToInt32(ReadLine());
+            Write("Hello {0}, how old are you? ", name); //Gets user's age
 
-            Write("How much money do you have, {0}? ", name);
+            age = Convert.ToInt32(ReadLine()); //stores age 
 
-            double money = Convert.ToDouble(ReadLine());
+            Write("How much money do you have, {0}? ", name); //gets users money
 
-            Write("Finally, {0} what is your gender (M/F)? ", name);
+            money = Convert.ToDouble(ReadLine()); //stores money
 
-            string gender = ReadLine().ToUpper();
+            Write("Finally, {0} what is your gender (M/F)? ", name); //gets users gender
+
+            gender = ReadLine().ToUpper(); //stores gender in CAPS  
 
             //Outputs all variables
-            WriteLine();
-            WriteLine("Name: {0}", name);
-            WriteLine("Age: {0}", age);
-            WriteLine("Amount of money: {0}", money);
-            WriteLine("Gender: {0}", gender);
+            
+            Write("Thank you {0}! ", name);
+            Write("You are {0} years old ", age);
+            Write("and have {0} dollars. ", money);
+
+            //special line that only gets written in the user puts 'F' for their gender.
+            WriteLine($"{((gender[0] =='F')?"Ladies get a special prize!" : "")}");
 
             Write("Press any key to continue ... ");
             ReadKey(true);
