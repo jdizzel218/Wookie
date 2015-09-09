@@ -48,7 +48,8 @@
             this.TxtBoxResult.Name = "TxtBoxResult";
             this.TxtBoxResult.Size = new System.Drawing.Size(75, 20);
             this.TxtBoxResult.TabIndex = 1;
-            this.TxtBoxResult.Click += new System.EventHandler(this.TxtBoxResult_Click);
+            this.TxtBoxResult.Text = "0.0";
+            this.TxtBoxResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LblResult
             // 
@@ -78,15 +79,17 @@
             this.BtnClear.TabIndex = 3;
             this.BtnClear.Text = "Clear";
             this.BtnClear.UseVisualStyleBackColor = true;
+            this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
             // TxtBoxLeftOpt
             // 
-            this.TxtBoxLeftOpt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBoxLeftOpt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtBoxLeftOpt.Location = new System.Drawing.Point(12, 25);
             this.TxtBoxLeftOpt.Name = "TxtBoxLeftOpt";
             this.TxtBoxLeftOpt.Size = new System.Drawing.Size(75, 20);
             this.TxtBoxLeftOpt.TabIndex = 1;
-            this.TxtBoxLeftOpt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxLeftOpt_KeyDown);
+            this.TxtBoxLeftOpt.Text = "0.0";
+            this.TxtBoxLeftOpt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LblLeftOp
             // 
@@ -94,9 +97,9 @@
             this.LblLeftOp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblLeftOp.Location = new System.Drawing.Point(9, 9);
             this.LblLeftOp.Name = "LblLeftOp";
-            this.LblLeftOp.Size = new System.Drawing.Size(82, 13);
+            this.LblLeftOp.Size = new System.Drawing.Size(81, 13);
             this.LblLeftOp.TabIndex = 2;
-            this.LblLeftOp.Text = "Left Operator";
+            this.LblLeftOp.Text = "Left Operand";
             // 
             // TxtBoxRightOp
             // 
@@ -105,7 +108,7 @@
             this.TxtBoxRightOp.Size = new System.Drawing.Size(87, 20);
             this.TxtBoxRightOp.TabIndex = 1;
             this.TxtBoxRightOp.Text = "0.0";
-            this.TxtBoxRightOp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxRightOp_KeyDown);
+            this.TxtBoxRightOp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LblRightOp
             // 
@@ -113,9 +116,9 @@
             this.LblRightOp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblRightOp.Location = new System.Drawing.Point(182, 9);
             this.LblRightOp.Name = "LblRightOp";
-            this.LblRightOp.Size = new System.Drawing.Size(90, 13);
+            this.LblRightOp.Size = new System.Drawing.Size(89, 13);
             this.LblRightOp.TabIndex = 2;
-            this.LblRightOp.Text = "Right Operator";
+            this.LblRightOp.Text = "Right Operand";
             // 
             // BtnPlus
             // 
@@ -145,6 +148,7 @@
             this.BtnMul.TabIndex = 3;
             this.BtnMul.Text = "*";
             this.BtnMul.UseVisualStyleBackColor = true;
+            this.BtnMul.Click += new System.EventHandler(this.BtnMul_Click);
             // 
             // BtnDiv
             // 
@@ -154,6 +158,7 @@
             this.BtnDiv.TabIndex = 3;
             this.BtnDiv.Text = "/";
             this.BtnDiv.UseVisualStyleBackColor = true;
+            this.BtnDiv.Click += new System.EventHandler(this.BtnDiv_Click);
             // 
             // FrmMain
             // 
