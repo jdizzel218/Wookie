@@ -83,10 +83,10 @@
             // 
             // TxtBoxLeftOpt
             // 
-            this.TxtBoxLeftOpt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBoxLeftOpt.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtBoxLeftOpt.Location = new System.Drawing.Point(12, 25);
             this.TxtBoxLeftOpt.Name = "TxtBoxLeftOpt";
-            this.TxtBoxLeftOpt.Size = new System.Drawing.Size(75, 20);
+            this.TxtBoxLeftOpt.Size = new System.Drawing.Size(75, 35);
             this.TxtBoxLeftOpt.TabIndex = 1;
             this.TxtBoxLeftOpt.Text = "0.0";
             this.TxtBoxLeftOpt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -103,9 +103,10 @@
             // 
             // TxtBoxRightOp
             // 
+            this.TxtBoxRightOp.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtBoxRightOp.Location = new System.Drawing.Point(185, 25);
             this.TxtBoxRightOp.Name = "TxtBoxRightOp";
-            this.TxtBoxRightOp.Size = new System.Drawing.Size(87, 20);
+            this.TxtBoxRightOp.Size = new System.Drawing.Size(87, 35);
             this.TxtBoxRightOp.TabIndex = 1;
             this.TxtBoxRightOp.Text = "0.0";
             this.TxtBoxRightOp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -122,9 +123,10 @@
             // 
             // BtnPlus
             // 
-            this.BtnPlus.Location = new System.Drawing.Point(12, 51);
+            this.BtnPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPlus.Location = new System.Drawing.Point(245, 66);
             this.BtnPlus.Name = "BtnPlus";
-            this.BtnPlus.Size = new System.Drawing.Size(27, 23);
+            this.BtnPlus.Size = new System.Drawing.Size(27, 32);
             this.BtnPlus.TabIndex = 3;
             this.BtnPlus.Text = "+";
             this.BtnPlus.UseVisualStyleBackColor = true;
@@ -132,9 +134,10 @@
             // 
             // BtnMinus
             // 
-            this.BtnMinus.Location = new System.Drawing.Point(12, 80);
+            this.BtnMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMinus.Location = new System.Drawing.Point(244, 104);
             this.BtnMinus.Name = "BtnMinus";
-            this.BtnMinus.Size = new System.Drawing.Size(27, 23);
+            this.BtnMinus.Size = new System.Drawing.Size(27, 26);
             this.BtnMinus.TabIndex = 3;
             this.BtnMinus.Text = "-";
             this.BtnMinus.UseVisualStyleBackColor = true;
@@ -142,7 +145,8 @@
             // 
             // BtnMul
             // 
-            this.BtnMul.Location = new System.Drawing.Point(12, 110);
+            this.BtnMul.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMul.Location = new System.Drawing.Point(12, 75);
             this.BtnMul.Name = "BtnMul";
             this.BtnMul.Size = new System.Drawing.Size(27, 23);
             this.BtnMul.TabIndex = 3;
@@ -152,9 +156,10 @@
             // 
             // BtnDiv
             // 
-            this.BtnDiv.Location = new System.Drawing.Point(12, 139);
+            this.BtnDiv.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDiv.Location = new System.Drawing.Point(12, 104);
             this.BtnDiv.Name = "BtnDiv";
-            this.BtnDiv.Size = new System.Drawing.Size(27, 23);
+            this.BtnDiv.Size = new System.Drawing.Size(27, 36);
             this.BtnDiv.TabIndex = 3;
             this.BtnDiv.Text = "/";
             this.BtnDiv.UseVisualStyleBackColor = true;

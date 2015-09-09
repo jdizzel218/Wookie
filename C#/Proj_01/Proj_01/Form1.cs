@@ -1,4 +1,13 @@
-﻿
+﻿// Project Prolog
+// Name: Matthew L. Cranford
+// CS 1400 Section 001
+// Date: 9/9/2015 3:32 PM
+//
+// I declare that the following code was written by me or provided
+// by the instructure for this project. I understand that copying source
+// code from any other source consitutes cheating and that I will recieve
+// a zero on this project if I am found in violation of this policy.
+
 
 
 
