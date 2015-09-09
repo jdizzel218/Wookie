@@ -69,3 +69,18 @@ I. Identifiers
 
 
 Went over Lab 2 today in class. 
+
+
+
+----- 9/9/2015 -----
+
+
+I. Flow of control
+	A. the order in which the statements in a program are executed
+	B. if the "if statement"  resolves to TRUE then do something... If it's FALSE then do this... OTHERWISE do this...
+	C. Four types of flow-control:
+		1. if
+		2. if-ese
+		3. ?:
+		4. switch
+	D. $ - string interpelator (Converts value of variables to strings on the fly)

@@ -48,7 +48,7 @@
             this.TxtBoxResult.Name = "TxtBoxResult";
             this.TxtBoxResult.Size = new System.Drawing.Size(75, 20);
             this.TxtBoxResult.TabIndex = 1;
-            this.TxtBoxResult.TextChanged += new System.EventHandler(this.TxtBoxResult_TextChanged);
+            this.TxtBoxResult.Click += new System.EventHandler(this.TxtBoxResult_Click);
             // 
             // LblResult
             // 
@@ -86,8 +86,7 @@
             this.TxtBoxLeftOpt.Name = "TxtBoxLeftOpt";
             this.TxtBoxLeftOpt.Size = new System.Drawing.Size(75, 20);
             this.TxtBoxLeftOpt.TabIndex = 1;
-            this.TxtBoxLeftOpt.Text = "0.0";
-            this.TxtBoxLeftOpt.TextChanged += new System.EventHandler(this.TxtBoxLeftOpt_TextChanged);
+            this.TxtBoxLeftOpt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxLeftOpt_KeyDown);
             // 
             // LblLeftOp
             // 
@@ -106,6 +105,7 @@
             this.TxtBoxRightOp.Size = new System.Drawing.Size(87, 20);
             this.TxtBoxRightOp.TabIndex = 1;
             this.TxtBoxRightOp.Text = "0.0";
+            this.TxtBoxRightOp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxRightOp_KeyDown);
             // 
             // LblRightOp
             // 
@@ -135,6 +135,7 @@
             this.BtnMinus.TabIndex = 3;
             this.BtnMinus.Text = "-";
             this.BtnMinus.UseVisualStyleBackColor = true;
+            this.BtnMinus.Click += new System.EventHandler(this.BtnMinus_Click);
             // 
             // BtnMul
             // 
