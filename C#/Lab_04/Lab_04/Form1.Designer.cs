@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.MnuMain = new System.Windows.Forms.MenuStrip();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuStripAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuStripExit = new System.Windows.Forms.ToolStripMenuItem();
             this.BtnExit = new System.Windows.Forms.Button();
             this.MnuMain.SuspendLayout();
             this.SuspendLayout();
@@ -39,7 +39,7 @@
             // MnuMain
             // 
             this.MnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
+            this.MnuExit});
             this.MnuMain.Location = new System.Drawing.Point(0, 0);
             this.MnuMain.Name = "MnuMain";
             this.MnuMain.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
@@ -47,28 +47,28 @@
             this.MnuMain.TabIndex = 0;
             this.MnuMain.Text = "Main Menu";
             // 
-            // exitToolStripMenuItem
+            // MnuExit
             // 
-            this.exitToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem,
-            this.exitToolStripMenuItem1});
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.MnuExit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MnuStripAbout,
+            this.MnuStripExit});
+            this.MnuExit.Name = "MnuExit";
+            this.MnuExit.Size = new System.Drawing.Size(37, 20);
+            this.MnuExit.Text = "Exit";
             // 
-            // aboutToolStripMenuItem
+            // MnuStripAbout
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.MnuStripAbout.Name = "MnuStripAbout";
+            this.MnuStripAbout.Size = new System.Drawing.Size(152, 22);
+            this.MnuStripAbout.Text = "About";
+            this.MnuStripAbout.Click += new System.EventHandler(this.MnuStripAbout_Click);
             // 
-            // exitToolStripMenuItem1
+            // MnuStripExit
             // 
-            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem1.Text = "Exit";
-            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
+            this.MnuStripExit.Name = "MnuStripExit";
+            this.MnuStripExit.Size = new System.Drawing.Size(152, 22);
+            this.MnuStripExit.Text = "Exit";
+            this.MnuStripExit.Click += new System.EventHandler(this.MnuStripExit_Click);
             // 
             // BtnExit
             // 
@@ -78,6 +78,7 @@
             this.BtnExit.TabIndex = 1;
             this.BtnExit.Text = "Exit";
             this.BtnExit.UseVisualStyleBackColor = true;
+            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // FrmMenuStrip1
             // 
@@ -100,9 +101,9 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip MnuMain;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem MnuExit;
+        private System.Windows.Forms.ToolStripMenuItem MnuStripAbout;
+        private System.Windows.Forms.ToolStripMenuItem MnuStripExit;
         private System.Windows.Forms.Button BtnExit;
     }
 }

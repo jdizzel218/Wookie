@@ -25,6 +25,9 @@ namespace Lab_04
 {
     public partial class FrmMenuStrip1 : Form
     {
+        /// <summary>
+        /// Purpose: Main entry point of program.
+        /// </summary>
         public FrmMenuStrip1()
         {
             InitializeComponent();
@@ -34,12 +37,8 @@ namespace Lab_04
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        // The exitToolStripMenuItem1 method
-        // Purpose: To close the window and terminate the apllication
-        // Parameters: the object generating the event 
-        // and the event arguements
-        // Returns: None
-        private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
+       
+        private void MnuStripExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -48,13 +47,19 @@ namespace Lab_04
         /// </summary>
         /// <param name="sender"> About Menu Item</param>
         /// <param name="e">NOT used</param>
-        // The aboutToolStripMenuItem method
-        // Purpose: Will display a messgebox with information regarding the author.
-        // Parameters: the object generating the event and the event arguements
-        // returns: None
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+       
+        private void MnuStripAbout_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Matthew L. Cranford\nCs1400 - Section 001\nLab #4", "About DialogBox");
+        }
+        /// <summary>
+        /// Purpose: To close the program when clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Close(); //Closes the button
         }
     }// End class FrmMenuStrip1
 }// End namespace Lab_04
