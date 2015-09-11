@@ -53,7 +53,7 @@ IV. Programs and Data
 
 I. Identifiers 
 	A. (int iData = 32); an identifier is the name of the variable. It contains the 'address' in 
-	   	memory that the computer uses to find the data the variable refernces to.
+	   	memory that the computer uses to find the data the variable references to.
 
 	B. Must begin with either a letter or an underscore character i.e [a-z, A-Z, _ ], the remaining
 		characters may be letters, digits, or the underscore character [ a-z, A-Z, 0-9, _], they
@@ -84,3 +84,24 @@ I. Flow of control
 		3. ?:
 		4. switch
 	D. $ - string interpelator (Converts value of variables to strings on the fly)
+
+
+
+
+----- 9/11/2015 -----
+
+//Reviewed Conditionals - if statements.
+
+I. Common Registrers
+	A. EAX - (a stands for accumulator)
+	B. EBX - (a was already used so they used b instead.)
+	C. ECX
+	D. EDX
+	E. When processors were 16bits they were called a,b,c,d. When they were 32bits they called them ax,bx,cx,dx
+		and now that processors are 64bits, they called them eax, ebx,ecx,edx.
+
+//Covered expressions, operators, and logical(boolean) operators.
+
+II. 
+
+ 

@@ -29,6 +29,10 @@ namespace VirusGenerator
 {
     public partial class Troy : Form
     {
+        
+        string _outputFolder;
+        string file_name;
+        string fileExt;
         public Troy()
         {
             InitializeComponent();
@@ -41,11 +45,32 @@ namespace VirusGenerator
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           // if (e == e[0])
-            //{
+            string formatSelected = CBoxFor.Text;
+            if (formatSelected == ".exe")
+            {
+                fileExt = ".exe";
+            }
+            else
+            {
+                fileExt = ".bat";
+            }
+            
 
-            //}
+        }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void versionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Troy \nVirusGenerator v1.0 \n2015");
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -23,11 +23,14 @@ using System.Windows.Forms;
 
 namespace Lab_04
 {
+    /// <summary>
+    /// Class: defines the form
+    /// </summary>
     public partial class FrmMenuStrip1 : Form
     {
-        int _input;
-        string _result;
-        int MULT = 2
+        int _inputVal;
+        int _outputVal;
+        int MULT = 2;
         /// <summary>
         /// Purpose: Main entry point of program.
         /// </summary>
@@ -71,23 +74,56 @@ namespace Lab_04
         /// <param name="e">NOT used</param>
         private void TxtInput_Leave(object sender, EventArgs e)
         {
+           
 
-            if (int.TryParse(TxtInput.Text, out _input)) ;
+            if (int.TryParse(TxtInput.Text, out _inputVal)) 
             {
-                TxtOutput.Text = $"{_input * MULT:D}";
+                TxtOutput.Text = $"{_inputVal * MULT:D}";
+                TxtOutput.Focus();
             }
-            //_input = Convert.ToInt32(TxtInput.Text);
-            //_result = (_input * MULT).ToString();
-            //TxtOutput.Text = _result;
-            //TxtOutput.Focus();
-
-
-            
+            else{
+                TxtInput.Text = $"{TxtInput.Text} -> Invalid int";
+                TxtInput.Focus();
+            }
+                      
+        }
+        /// <summary>
+        /// Calculate the sum of the values in Txtinput and TxtOutput textboxes and place their sum in LblSum.
+        /// </summary>
+        /// <param name="sender">KeyPress Event in TxtOutput</param>
+        /// <param name="e">Key Pressed</param>
+        private void TxtOutput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (int.TryParse(TxtOutput.Text, out _outputVal))
+                {
+                    LblSum.Text = $"Sum:{(_inputVal + _outputVal),20:D}";
+                    TxtInput.Focus();
+                }
+                else
+                {
+                    TxtOutput.Text = $"{ TxtOutput.Text} -> Invalid int";
+                    TxtOutput.Focus();
+                }
+            }
         }
     }// End class FrmMenuStrip1
 }// End namespace Lab_04
 
 // Quiz
-// Question 1 : C - method prologue
+// Question 1 : 
+//              if (int.TryParse(TxtCashInput.Text, out cash)){
+//                      TxtOutput.Text = $"{Cash:{(cash)),:D}";
+//                      }
 
-// Question 2 : B - event handler
+// Question 2 : 
+            //if (int.TryParse(TxtInput.Text, out _inputVal)) 
+            //{
+                //TxtOutput.Text = $"{_inputVal / MULT:D}"; ***Changed the operator to '/' ****
+                //TxtOutput.Focus();
+            //}
+            //else{
+                //TxtInput.Text = $"{TxtInput.Text} -> Invalid int";
+                //TxtInput.Focus();
+            //}

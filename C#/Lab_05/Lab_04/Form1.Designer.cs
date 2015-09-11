@@ -89,9 +89,8 @@
             // 
             this.TxtInput.Location = new System.Drawing.Point(119, 59);
             this.TxtInput.Name = "TxtInput";
-            this.TxtInput.Size = new System.Drawing.Size(100, 20);
+            this.TxtInput.Size = new System.Drawing.Size(130, 20);
             this.TxtInput.TabIndex = 2;
-            this.TxtInput.Text = "<none>";
             this.TxtInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtInput.Leave += new System.EventHandler(this.TxtInput_Leave);
             // 
@@ -108,10 +107,10 @@
             // 
             this.TxtOutput.Location = new System.Drawing.Point(119, 123);
             this.TxtOutput.Name = "TxtOutput";
-            this.TxtOutput.Size = new System.Drawing.Size(100, 20);
+            this.TxtOutput.Size = new System.Drawing.Size(130, 20);
             this.TxtOutput.TabIndex = 2;
-            this.TxtOutput.Text = "<none>";
             this.TxtOutput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtOutput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtOutput_KeyPress);
             // 
             // LblOutput
             // 
