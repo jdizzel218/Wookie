@@ -38,12 +38,13 @@ namespace VirusGenerator
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnGen_Click(object sender, EventArgs e)
         {
-
+            _outputFolder = TxtBoxDes.Text;
+            file_name    = TxtBoxFileName.Text;
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        public void CBoxFor_SelectedIndexChanged(object sender, EventArgs e)
         {
             string formatSelected = CBoxFor.Text;
             if (formatSelected == ".exe")
@@ -54,13 +55,8 @@ namespace VirusGenerator
             {
                 fileExt = ".bat";
             }
-            
 
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
+            ToolStrip.Text = $"Format Selected: '{formatSelected}'";
         }
 
         private void versionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -69,6 +65,25 @@ namespace VirusGenerator
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void TxtBoxFileName_TextChanged(object sender, EventArgs e)
+        {
+            ToolStrip.Text = $"Name Chosen: '{TxtBoxFileName.Text}'";
+        }
+
+        private void CBoxAttack_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string attackSelected = CBoxAttack.Text;
+
+
+
+            ToolStrip.Text = $"Attack Selected: '{attackSelected}'";
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }
