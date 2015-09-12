@@ -1,22 +1,22 @@
-﻿// Project Prolog
-// Name: Matthew L. Cranford
+﻿// File/Project Prolog
+// Name: Matthew Cranford
 // CS 1400 Section 001
-// Date: 9/9/2015 3:32 PM
+// Project: Proj_01
+// Date: 9/12/2015 1:25 PM
 //
-// I declare that the following code was written by me or provided
-// by the instructure for this project. I understand that copying source
-// code from any other source consitutes cheating and that I will recieve
+// I declare that the following code was written by me or provided 
+// by the instructor for this project. I understand that copying source
+// code from any other source constitutes cheating, and that I will receive
 // a zero on this project if I am found in violation of this policy.
+// ---------------------------------------------------------------------------
 
 
 
+//Peusdo-Code:
+// 1. Get input from the user regarding the price of their meal.
+// 2. When the user tabs out of the box, calculate the tip for 10%, 15%, and 20% upto 2 decimal places
+// 3. Output the calculated tip back to the user.
 
-///Pseudo-Code
-/// 1. Take input of 2 (floating point) numbers from the user. -resolved.
-/// 2. Do some math on those numbers (+, -, /, *) - resolved.
-/// 3. Output the resultant number to a textbox. -resolved
-/// 4. Have a button that will clear all three textboxes - resolved.
-/// 5. Have an exit button. - resolved.
 
 using System;
 using System.Collections.Generic;
@@ -29,107 +29,71 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Proj_01
-{
-    /// <summary>
-    /// Purpose: Entry point into program.
-    /// </summary>
+{ 
     public partial class FrmMain : Form
     {
-        // init variables
-        private double _rightOp;
-        private double _leftOp;
-        private double _result;
-
+        //Init variables and constants.
+        double _mealCost;
+        const double TEN     = .10; //10 percent.
+        const double FIFTEEN = .15; //15 percent.
+        const double TWENTY  = .20; //20 percent.
         /// <summary>
-        /// Purpose: To initialize the main form.
+        /// Purpose: Initialize the FrmMain
         /// </summary>
         public FrmMain()
         {
             InitializeComponent();
         }
-
-        //The Clear and Exit buttons//
         /// <summary>
-        /// Purpose: To exit out of the program.
+        /// Purpose: Closes the App. from the menu strip.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BtnExit_Click(object sender, EventArgs e) //This closes the program
+        private void MnuStripExitItem_Click(object sender, EventArgs e)
         {
             Close();
         }
+
         /// <summary>
-        /// Purpose: to clear the textboxes
+        /// Purpose: Shows an 'about' message box when clicked.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BtnClear_Click(object sender, EventArgs e)
+        private void MnuStripAboutItem_Click(object sender, EventArgs e)
         {
-            //Clears the screen.
-            TxtBoxLeftOpt.Text = "0.0";
-            TxtBoxRightOp.Text = "0.0";
-            TxtBoxResult.Text = "0.0";
-
-            //Resets the operand values.
-            _leftOp = 0;
-            _rightOp = 0;
-            _result = 0;
+            MessageBox.Show("Matthew Cranford \nCS1400 Section 001", "About"); //displays message box.
         }
 
-        //End Clear and Exit buttons//
-
-        //Operator buttons Start//
         /// <summary>
-        /// Purpose: To add the left and right operands.
+        /// Purpose: Calculates all the meal tips when clicked.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BtnPlus_Click(object sender, EventArgs e) //This purpose is to add the leftOp and the rightOp together.
+        private void BtnCalc_Click(object sender, EventArgs e)
         {
-            _leftOp = Convert.ToDouble(TxtBoxLeftOpt.Text);
-            _rightOp = Convert.ToDouble(TxtBoxRightOp.Text);
-            _result = _leftOp + _rightOp;
-            TxtBoxResult.Text = (_result).ToString();
-          
-        }
-        /// <summary>
-        /// Purspose: To minus the left and right operands.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+            _mealCost = Convert.ToDouble(TxtMealCost.Text);
 
-        private void BtnMinus_Click(object sender, EventArgs e) //this is suppose to minue the leftOp and rightOp and return a string for _result.
-        {
-            _leftOp = Convert.ToDouble(TxtBoxLeftOpt.Text);
-            _rightOp = Convert.ToDouble(TxtBoxRightOp.Text);
-            _result = _leftOp - _rightOp;
-            TxtBoxResult.Text = (_result).ToString();
-        }
-        /// <summary>
-        /// Purpose: To multiply the left and right operands.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BtnMul_Click(object sender, EventArgs e)
-        {
-            _leftOp = Convert.ToDouble(TxtBoxLeftOpt.Text);
-            _rightOp = Convert.ToDouble(TxtBoxRightOp.Text);
-            _result = _leftOp * _rightOp;
-            TxtBoxResult.Text = (_result).ToString();
-        }
-        /// <summary>
-        /// Purpose: To take the left operand and right operand and divide them.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BtnDiv_Click(object sender, EventArgs e)
-        {
-            _leftOp = Convert.ToDouble(TxtBoxLeftOpt.Text);
-            _rightOp = Convert.ToDouble(TxtBoxRightOp.Text);
-            _result = _leftOp / _rightOp;
-            TxtBoxResult.Text = (_result).ToString();
-        }
-        //Operator buttons End//
+            TxtPoor.Text      = (_mealCost * TEN).ToString("N2"); //calculates poor service and returns a string with 2 decimal places
+            TxtAverage.Text   = (_mealCost * FIFTEEN).ToString("N2"); //Same as above but for average service.
+            TxtExcellent.Text = (_mealCost * TWENTY).ToString("N2"); // Same as above but for excellent service.
 
-    }// End Main
-} //End namespace Proj_01 
+        }
+        /// <summary>
+        /// Purpose: Calculates tip if user 'tabs' out of the textbox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TxtMealCost_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Tab))
+            {
+                _mealCost = Convert.ToDouble(TxtMealCost.Text);
+
+                TxtPoor.Text      = (_mealCost * TEN).ToString("N2"); //calculates poor service and returns a string with 2 decimal places
+                TxtAverage.Text   = (_mealCost * FIFTEEN).ToString("N2"); //Same as above but for average service.
+                TxtExcellent.Text = (_mealCost * TWENTY).ToString("N2"); // Same as above but for excellent service.
+
+            }
+        }
+    } //End main
+}// End Namespace
