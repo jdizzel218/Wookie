@@ -30,7 +30,7 @@ namespace Lab_04
     {
         int _inputVal;
         int _outputVal;
-        int MULT = 2;
+        const int MULT = 2;
         /// <summary>
         /// Purpose: Main entry point of program.
         /// </summary>
@@ -56,7 +56,7 @@ namespace Lab_04
        
         private void MnuStripAbout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Matthew L. Cranford\nCs1400 - Section 001\nLab #4", "About DialogBox");
+            MessageBox.Show("Matthew L. Cranford\nCS1400 - Section 001\nLab #5", "About DialogBox");
         }
         /// <summary>
         /// Purpose: To close the program when clicked.
@@ -113,9 +113,8 @@ namespace Lab_04
 
 // Quiz
 // Question 1 : 
-//              if (int.TryParse(TxtCashInput.Text, out cash)){
-//                      TxtOutput.Text = $"{Cash:{(cash)),:D}";
-//                      }
+//              double cash = 4.56;
+//              Textbox.Text = cash.ToString("N2");
 
 // Question 2 : 
             //if (int.TryParse(TxtInput.Text, out _inputVal)) 

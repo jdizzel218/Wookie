@@ -38,6 +38,8 @@
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.versionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuStripHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuStripHowToItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BtnExit = new System.Windows.Forms.Button();
             this.LblDes = new System.Windows.Forms.Label();
             this.TxtBoxDes = new System.Windows.Forms.TextBox();
@@ -64,8 +66,8 @@
             // 
             this.CBoxFor.FormattingEnabled = true;
             this.CBoxFor.Items.AddRange(new object[] {
-            ".exe",
-            ".bat"});
+            ".bat",
+            ".py"});
             this.CBoxFor.Location = new System.Drawing.Point(240, 134);
             this.CBoxFor.Name = "CBoxFor";
             this.CBoxFor.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -102,7 +104,8 @@
             // 
             this.MnuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.MnuStripHelp});
             this.MnuStrip.Location = new System.Drawing.Point(0, 0);
             this.MnuStrip.Name = "MnuStrip";
             this.MnuStrip.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -139,6 +142,20 @@
             this.versionToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.versionToolStripMenuItem.Text = "Version";
             this.versionToolStripMenuItem.Click += new System.EventHandler(this.versionToolStripMenuItem_Click);
+            // 
+            // MnuStripHelp
+            // 
+            this.MnuStripHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MnuStripHowToItem});
+            this.MnuStripHelp.Name = "MnuStripHelp";
+            this.MnuStripHelp.Size = new System.Drawing.Size(44, 20);
+            this.MnuStripHelp.Text = "Help";
+            // 
+            // MnuStripHowToItem
+            // 
+            this.MnuStripHowToItem.Name = "MnuStripHowToItem";
+            this.MnuStripHowToItem.Size = new System.Drawing.Size(138, 22);
+            this.MnuStripHowToItem.Text = "How To Use";
             // 
             // BtnExit
             // 
@@ -271,6 +288,8 @@
         private System.Windows.Forms.TextBox TxtBoxFileName;
         private System.Windows.Forms.Label LblWarning;
         private System.Windows.Forms.ToolStripStatusLabel ToolStrip;
+        private System.Windows.Forms.ToolStripMenuItem MnuStripHelp;
+        private System.Windows.Forms.ToolStripMenuItem MnuStripHowToItem;
     }
 }
 
