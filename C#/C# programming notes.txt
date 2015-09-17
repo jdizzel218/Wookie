@@ -83,7 +83,7 @@ I. Flow of control
 		2. if-ese
 		3. ?:
 		4. switch
-	D. $ - string interpelator (Converts value of variables to strings on the fly)
+	D. $ - String interpelator (Converts value of variables to strings on the fly)
 
 
 
@@ -102,6 +102,20 @@ I. Common Registrers
 
 //Covered expressions, operators, and logical(boolean) operators.
 
-II. 
+
+
+---- 9/16/2015 -----
+
+
+I. Type Casting
+	A. casting is used to explicitly converts from one data type to another. Casts do both
+		widening and narrowing conversions. (Up-Casting and Down-Casting)
+
+II. Operation Precendence
+	A. *, / has more presedence than +,-
+
+III. The String Class
+	A. Strings can be concatenated (added together) using the + operator (think of it as being a gluestick.)
+	B. 
 
  
