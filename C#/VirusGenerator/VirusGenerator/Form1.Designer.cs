@@ -93,7 +93,7 @@
             this.ToolStrip});
             this.statusStrip1.Location = new System.Drawing.Point(0, 219);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(405, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(404, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -111,7 +111,7 @@
             this.MnuStrip.Location = new System.Drawing.Point(0, 0);
             this.MnuStrip.Name = "MnuStrip";
             this.MnuStrip.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.MnuStrip.Size = new System.Drawing.Size(405, 24);
+            this.MnuStrip.Size = new System.Drawing.Size(404, 24);
             this.MnuStrip.TabIndex = 5;
             this.MnuStrip.Text = "menuStrip1";
             // 
@@ -254,7 +254,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 241);
+            this.ClientSize = new System.Drawing.Size(404, 241);
             this.Controls.Add(this.TxtBoxFileName);
             this.Controls.Add(this.TxtBoxDes);
             this.Controls.Add(this.LblAttack);
@@ -272,6 +272,7 @@
             this.MainMenuStrip = this.MnuStrip;
             this.Name = "Troy";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Troy";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

