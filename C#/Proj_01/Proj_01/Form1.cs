@@ -34,9 +34,9 @@ namespace Proj_01
     {
         //Init variables and constants.
         double _mealCost;
-        const double TEN     = .10; //10 percent.
-        const double FIFTEEN = .15; //15 percent.
-        const double TWENTY  = .20; //20 percent.
+        const double POORMEALTIP        = .10; //10 percent.
+        const double AVERAGEMEALTIP     = .15; //15 percent.
+        const double EXECELLENTMEALTIP  = .20; //20 percent.
         /// <summary>
         /// Purpose: Initialize the FrmMain
         /// </summary>
@@ -71,11 +71,14 @@ namespace Proj_01
         /// <param name="e"></param>
         private void BtnCalc_Click(object sender, EventArgs e)
         {
-            _mealCost = Convert.ToDouble(TxtMealCost.Text);
+            if(double.TryParse(TxtMealCost.Text, out _mealCost))
+            {
+                TxtPoor.Text      = (_mealCost * POORMEALTIP).ToString("C2"); //calculates poor service and returns a string with 2 decimal places
+                TxtAverage.Text   = (_mealCost * AVERAGEMEALTIP).ToString("C2"); //Same as above but for average service.
+                TxtExcellent.Text = (_mealCost * EXECELLENTMEALTIP).ToString("C2"); // Same as above but for excellent service.
+            }
 
-            TxtPoor.Text      = (_mealCost * TEN).ToString("N2"); //calculates poor service and returns a string with 2 decimal places
-            TxtAverage.Text   = (_mealCost * FIFTEEN).ToString("N2"); //Same as above but for average service.
-            TxtExcellent.Text = (_mealCost * TWENTY).ToString("N2"); // Same as above but for excellent service.
+            
 
         }
         /// <summary>
@@ -87,11 +90,14 @@ namespace Proj_01
         {
             if (e.KeyCode.Equals(Keys.Tab))
             {
-                _mealCost = Convert.ToDouble(TxtMealCost.Text);
+                if(double.TryParse(TxtMealCost.Text, out _mealCost))
+                {
+                    TxtPoor.Text = (_mealCost * POORMEALTIP).ToString("C2"); //calculates poor service and returns a string with 2 decimal places
+                    TxtAverage.Text = (_mealCost * AVERAGEMEALTIP).ToString("C2"); //Same as above but for average service.
+                    TxtExcellent.Text = (_mealCost * EXECELLENTMEALTIP).ToString("C2"); // Same as above but for excellent service.
+                }
 
-                TxtPoor.Text      = (_mealCost * TEN).ToString("N2"); //calculates poor service and returns a string with 2 decimal places
-                TxtAverage.Text   = (_mealCost * FIFTEEN).ToString("N2"); //Same as above but for average service.
-                TxtExcellent.Text = (_mealCost * TWENTY).ToString("N2"); // Same as above but for excellent service.
+                
 
             }
         }

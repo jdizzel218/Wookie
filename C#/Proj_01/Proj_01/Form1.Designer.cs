@@ -100,6 +100,7 @@
             // 
             // TxtPoor
             // 
+            this.TxtPoor.Enabled = false;
             this.TxtPoor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtPoor.Location = new System.Drawing.Point(124, 95);
             this.TxtPoor.Name = "TxtPoor";
@@ -120,6 +121,7 @@
             // 
             // TxtAverage
             // 
+            this.TxtAverage.Enabled = false;
             this.TxtAverage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtAverage.Location = new System.Drawing.Point(124, 133);
             this.TxtAverage.Name = "TxtAverage";
@@ -140,6 +142,7 @@
             // 
             // TxtExcellent
             // 
+            this.TxtExcellent.Enabled = false;
             this.TxtExcellent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtExcellent.Location = new System.Drawing.Point(124, 164);
             this.TxtExcellent.Name = "TxtExcellent";

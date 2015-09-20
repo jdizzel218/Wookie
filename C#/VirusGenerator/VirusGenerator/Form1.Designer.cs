@@ -48,7 +48,6 @@
             this.LblFileName = new System.Windows.Forms.Label();
             this.TxtBoxFileName = new System.Windows.Forms.TextBox();
             this.LblWarning = new System.Windows.Forms.Label();
-            this.BtnDebug = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.MnuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +67,6 @@
             this.CBoxFor.FormattingEnabled = true;
             this.CBoxFor.Items.AddRange(new object[] {
             ".bat",
-            ".py",
             ".ps1"});
             this.CBoxFor.Location = new System.Drawing.Point(240, 134);
             this.CBoxFor.Name = "CBoxFor";
@@ -240,16 +238,6 @@
             this.LblWarning.TabIndex = 7;
             this.LblWarning.Text = "<- Don\'t include the format i.e (.exe, .bat)";
             // 
-            // BtnDebug
-            // 
-            this.BtnDebug.Location = new System.Drawing.Point(107, 182);
-            this.BtnDebug.Name = "BtnDebug";
-            this.BtnDebug.Size = new System.Drawing.Size(75, 23);
-            this.BtnDebug.TabIndex = 6;
-            this.BtnDebug.Text = "Debug";
-            this.BtnDebug.UseVisualStyleBackColor = true;
-            this.BtnDebug.Click += new System.EventHandler(this.BtnDebug_Click);
-            // 
             // Troy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,7 +249,6 @@
             this.Controls.Add(this.LblWarning);
             this.Controls.Add(this.LblFileName);
             this.Controls.Add(this.LblDes);
-            this.Controls.Add(this.BtnDebug);
             this.Controls.Add(this.BtnExit);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.MnuStrip);
@@ -305,7 +292,6 @@
         private System.Windows.Forms.ToolStripStatusLabel ToolStrip;
         private System.Windows.Forms.ToolStripMenuItem MnuStripHelp;
         private System.Windows.Forms.ToolStripMenuItem MnuStripHowToItem;
-        private System.Windows.Forms.Button BtnDebug;
     }
 }
 
