@@ -31,7 +31,7 @@
             this.BtnGen = new System.Windows.Forms.Button();
             this.CBoxFor = new System.Windows.Forms.ComboBox();
             this.BtnFormat = new System.Windows.Forms.Label();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.StaStrip = new System.Windows.Forms.StatusStrip();
             this.ToolStrip = new System.Windows.Forms.ToolStripStatusLabel();
             this.MnuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,13 +48,16 @@
             this.LblFileName = new System.Windows.Forms.Label();
             this.TxtBoxFileName = new System.Windows.Forms.TextBox();
             this.LblWarning = new System.Windows.Forms.Label();
-            this.statusStrip1.SuspendLayout();
+            this.LblCategory = new System.Windows.Forms.Label();
+            this.CBoxCategory = new System.Windows.Forms.ComboBox();
+            this.BtnFolderSelect = new System.Windows.Forms.Button();
+            this.StaStrip.SuspendLayout();
             this.MnuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnGen
             // 
-            this.BtnGen.Location = new System.Drawing.Point(240, 161);
+            this.BtnGen.Location = new System.Drawing.Point(300, 211);
             this.BtnGen.Name = "BtnGen";
             this.BtnGen.Size = new System.Drawing.Size(157, 44);
             this.BtnGen.TabIndex = 0;
@@ -68,7 +71,7 @@
             this.CBoxFor.Items.AddRange(new object[] {
             ".bat",
             ".ps1"});
-            this.CBoxFor.Location = new System.Drawing.Point(240, 134);
+            this.CBoxFor.Location = new System.Drawing.Point(300, 184);
             this.CBoxFor.Name = "CBoxFor";
             this.CBoxFor.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.CBoxFor.Size = new System.Drawing.Size(121, 21);
@@ -78,22 +81,22 @@
             // BtnFormat
             // 
             this.BtnFormat.AutoSize = true;
-            this.BtnFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnFormat.Location = new System.Drawing.Point(237, 118);
+            this.BtnFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFormat.Location = new System.Drawing.Point(297, 168);
             this.BtnFormat.Name = "BtnFormat";
-            this.BtnFormat.Size = new System.Drawing.Size(39, 13);
+            this.BtnFormat.Size = new System.Drawing.Size(45, 13);
             this.BtnFormat.TabIndex = 2;
             this.BtnFormat.Text = "Format";
             // 
-            // statusStrip1
+            // StaStrip
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StaStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStrip});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 219);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(404, 22);
-            this.statusStrip1.TabIndex = 4;
-            this.statusStrip1.Text = "statusStrip1";
+            this.StaStrip.Location = new System.Drawing.Point(0, 264);
+            this.StaStrip.Name = "StaStrip";
+            this.StaStrip.Size = new System.Drawing.Size(468, 22);
+            this.StaStrip.TabIndex = 4;
+            this.StaStrip.Text = "statusStrip1";
             // 
             // ToolStrip
             // 
@@ -109,7 +112,7 @@
             this.MnuStrip.Location = new System.Drawing.Point(0, 0);
             this.MnuStrip.Name = "MnuStrip";
             this.MnuStrip.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.MnuStrip.Size = new System.Drawing.Size(404, 24);
+            this.MnuStrip.Size = new System.Drawing.Size(468, 24);
             this.MnuStrip.TabIndex = 5;
             this.MnuStrip.Text = "menuStrip1";
             // 
@@ -159,7 +162,7 @@
             // 
             // BtnExit
             // 
-            this.BtnExit.Location = new System.Drawing.Point(12, 182);
+            this.BtnExit.Location = new System.Drawing.Point(12, 232);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(75, 23);
             this.BtnExit.TabIndex = 6;
@@ -170,16 +173,17 @@
             // LblDes
             // 
             this.LblDes.AutoSize = true;
-            this.LblDes.Location = new System.Drawing.Point(9, 126);
+            this.LblDes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDes.Location = new System.Drawing.Point(9, 179);
             this.LblDes.Name = "LblDes";
             this.LblDes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LblDes.Size = new System.Drawing.Size(60, 13);
+            this.LblDes.Size = new System.Drawing.Size(71, 13);
             this.LblDes.TabIndex = 7;
             this.LblDes.Text = "Destination";
             // 
             // TxtBoxDes
             // 
-            this.TxtBoxDes.Location = new System.Drawing.Point(12, 142);
+            this.TxtBoxDes.Location = new System.Drawing.Point(12, 195);
             this.TxtBoxDes.Name = "TxtBoxDes";
             this.TxtBoxDes.Size = new System.Drawing.Size(170, 20);
             this.TxtBoxDes.TabIndex = 8;
@@ -188,10 +192,11 @@
             // LblAttack
             // 
             this.LblAttack.AutoSize = true;
-            this.LblAttack.Location = new System.Drawing.Point(9, 83);
+            this.LblAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblAttack.Location = new System.Drawing.Point(9, 136);
             this.LblAttack.Name = "LblAttack";
             this.LblAttack.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LblAttack.Size = new System.Drawing.Size(38, 13);
+            this.LblAttack.Size = new System.Drawing.Size(44, 13);
             this.LblAttack.TabIndex = 7;
             this.LblAttack.Text = "Attack";
             // 
@@ -203,7 +208,7 @@
             "Folder Bomb Attack",
             "Nyan Cat Bomb Attack",
             "Keylogger"});
-            this.CBoxAttack.Location = new System.Drawing.Point(12, 99);
+            this.CBoxAttack.Location = new System.Drawing.Point(12, 152);
             this.CBoxAttack.Name = "CBoxAttack";
             this.CBoxAttack.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.CBoxAttack.Size = new System.Drawing.Size(170, 21);
@@ -213,16 +218,17 @@
             // LblFileName
             // 
             this.LblFileName.AutoSize = true;
-            this.LblFileName.Location = new System.Drawing.Point(9, 44);
+            this.LblFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFileName.Location = new System.Drawing.Point(9, 97);
             this.LblFileName.Name = "LblFileName";
             this.LblFileName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LblFileName.Size = new System.Drawing.Size(54, 13);
+            this.LblFileName.Size = new System.Drawing.Size(63, 13);
             this.LblFileName.TabIndex = 7;
             this.LblFileName.Text = "File Name";
             // 
             // TxtBoxFileName
             // 
-            this.TxtBoxFileName.Location = new System.Drawing.Point(12, 60);
+            this.TxtBoxFileName.Location = new System.Drawing.Point(12, 113);
             this.TxtBoxFileName.Name = "TxtBoxFileName";
             this.TxtBoxFileName.Size = new System.Drawing.Size(170, 20);
             this.TxtBoxFileName.TabIndex = 8;
@@ -231,28 +237,68 @@
             // LblWarning
             // 
             this.LblWarning.AutoSize = true;
-            this.LblWarning.Location = new System.Drawing.Point(190, 63);
+            this.LblWarning.Location = new System.Drawing.Point(188, 113);
             this.LblWarning.Name = "LblWarning";
             this.LblWarning.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.LblWarning.Size = new System.Drawing.Size(198, 13);
             this.LblWarning.TabIndex = 7;
             this.LblWarning.Text = "<- Don\'t include the format i.e (.exe, .bat)";
             // 
+            // LblCategory
+            // 
+            this.LblCategory.AutoSize = true;
+            this.LblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCategory.Location = new System.Drawing.Point(9, 55);
+            this.LblCategory.Name = "LblCategory";
+            this.LblCategory.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblCategory.Size = new System.Drawing.Size(57, 13);
+            this.LblCategory.TabIndex = 7;
+            this.LblCategory.Text = "Category";
+            // 
+            // CBoxCategory
+            // 
+            this.CBoxCategory.FormattingEnabled = true;
+            this.CBoxCategory.Items.AddRange(new object[] {
+            "Destructive",
+            "Espionage",
+            "Recon",
+            "Control"});
+            this.CBoxCategory.Location = new System.Drawing.Point(12, 71);
+            this.CBoxCategory.Name = "CBoxCategory";
+            this.CBoxCategory.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.CBoxCategory.Size = new System.Drawing.Size(170, 21);
+            this.CBoxCategory.TabIndex = 1;
+            this.CBoxCategory.SelectedIndexChanged += new System.EventHandler(this.CBoxCategory_SelectedIndexChanged);
+            // 
+            // BtnFolderSelect
+            // 
+            this.BtnFolderSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFolderSelect.Location = new System.Drawing.Point(191, 193);
+            this.BtnFolderSelect.Name = "BtnFolderSelect";
+            this.BtnFolderSelect.Size = new System.Drawing.Size(23, 23);
+            this.BtnFolderSelect.TabIndex = 9;
+            this.BtnFolderSelect.Text = "...";
+            this.BtnFolderSelect.UseVisualStyleBackColor = true;
+            this.BtnFolderSelect.Click += new System.EventHandler(this.BtnFolderSelect_Click);
+            // 
             // Troy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 241);
+            this.ClientSize = new System.Drawing.Size(468, 286);
+            this.Controls.Add(this.BtnFolderSelect);
             this.Controls.Add(this.TxtBoxFileName);
             this.Controls.Add(this.TxtBoxDes);
             this.Controls.Add(this.LblAttack);
             this.Controls.Add(this.LblWarning);
+            this.Controls.Add(this.LblCategory);
             this.Controls.Add(this.LblFileName);
             this.Controls.Add(this.LblDes);
             this.Controls.Add(this.BtnExit);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.StaStrip);
             this.Controls.Add(this.MnuStrip);
             this.Controls.Add(this.BtnFormat);
+            this.Controls.Add(this.CBoxCategory);
             this.Controls.Add(this.CBoxAttack);
             this.Controls.Add(this.CBoxFor);
             this.Controls.Add(this.BtnGen);
@@ -261,8 +307,8 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Troy";
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.StaStrip.ResumeLayout(false);
+            this.StaStrip.PerformLayout();
             this.MnuStrip.ResumeLayout(false);
             this.MnuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -275,7 +321,7 @@
         private System.Windows.Forms.Button BtnGen;
         private System.Windows.Forms.ComboBox CBoxFor;
         private System.Windows.Forms.Label BtnFormat;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip StaStrip;
         private System.Windows.Forms.MenuStrip MnuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
@@ -292,6 +338,9 @@
         private System.Windows.Forms.ToolStripStatusLabel ToolStrip;
         private System.Windows.Forms.ToolStripMenuItem MnuStripHelp;
         private System.Windows.Forms.ToolStripMenuItem MnuStripHowToItem;
+        private System.Windows.Forms.Label LblCategory;
+        private System.Windows.Forms.ComboBox CBoxCategory;
+        private System.Windows.Forms.Button BtnFolderSelect;
     }
 }
 

