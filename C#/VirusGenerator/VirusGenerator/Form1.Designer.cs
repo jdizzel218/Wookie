@@ -275,7 +275,7 @@
             this.BtnFolderSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnFolderSelect.Location = new System.Drawing.Point(191, 193);
             this.BtnFolderSelect.Name = "BtnFolderSelect";
-            this.BtnFolderSelect.Size = new System.Drawing.Size(23, 23);
+            this.BtnFolderSelect.Size = new System.Drawing.Size(27, 23);
             this.BtnFolderSelect.TabIndex = 9;
             this.BtnFolderSelect.Text = "...";
             this.BtnFolderSelect.UseVisualStyleBackColor = true;

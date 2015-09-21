@@ -231,10 +231,11 @@ namespace VirusGenerator
 
         private void BtnFolderSelect_Click(object sender, EventArgs e)
         {
+            
             FolderBrowserDialog folderSelect = new FolderBrowserDialog();
             folderSelect.ShowDialog();
-
-            
+            TxtBoxDes.Text = folderSelect.SelectedPath + "\\";
+            ToolStrip.Text = $"Output folder changed to {folderSelect.SelectedPath}\\";
 
         }
     }
