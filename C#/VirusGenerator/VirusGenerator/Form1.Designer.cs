@@ -51,6 +51,7 @@
             this.LblCategory = new System.Windows.Forms.Label();
             this.CBoxCategory = new System.Windows.Forms.ComboBox();
             this.BtnFolderSelect = new System.Windows.Forms.Button();
+            this.BtnEmail = new System.Windows.Forms.Button();
             this.StaStrip.SuspendLayout();
             this.MnuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -142,7 +143,7 @@
             // versionToolStripMenuItem
             // 
             this.versionToolStripMenuItem.Name = "versionToolStripMenuItem";
-            this.versionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.versionToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.versionToolStripMenuItem.Text = "Version";
             this.versionToolStripMenuItem.Click += new System.EventHandler(this.versionToolStripMenuItem_Click);
             // 
@@ -157,7 +158,7 @@
             // MnuStripHowToItem
             // 
             this.MnuStripHowToItem.Name = "MnuStripHowToItem";
-            this.MnuStripHowToItem.Size = new System.Drawing.Size(152, 22);
+            this.MnuStripHowToItem.Size = new System.Drawing.Size(138, 22);
             this.MnuStripHowToItem.Text = "How To Use";
             this.MnuStripHowToItem.Click += new System.EventHandler(this.MnuStripHowToItem_Click);
             // 
@@ -282,6 +283,16 @@
             this.BtnFolderSelect.UseVisualStyleBackColor = true;
             this.BtnFolderSelect.Click += new System.EventHandler(this.BtnFolderSelect_Click);
             // 
+            // BtnEmail
+            // 
+            this.BtnEmail.Location = new System.Drawing.Point(107, 232);
+            this.BtnEmail.Name = "BtnEmail";
+            this.BtnEmail.Size = new System.Drawing.Size(75, 23);
+            this.BtnEmail.TabIndex = 6;
+            this.BtnEmail.Text = "Email";
+            this.BtnEmail.UseVisualStyleBackColor = true;
+            this.BtnEmail.Click += new System.EventHandler(this.BtnEmail_Click);
+            // 
             // Troy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,6 +306,7 @@
             this.Controls.Add(this.LblCategory);
             this.Controls.Add(this.LblFileName);
             this.Controls.Add(this.LblDes);
+            this.Controls.Add(this.BtnEmail);
             this.Controls.Add(this.BtnExit);
             this.Controls.Add(this.StaStrip);
             this.Controls.Add(this.MnuStrip);
@@ -342,6 +354,7 @@
         private System.Windows.Forms.Label LblCategory;
         private System.Windows.Forms.ComboBox CBoxCategory;
         private System.Windows.Forms.Button BtnFolderSelect;
+        private System.Windows.Forms.Button BtnEmail;
     }
 }
 

@@ -6,6 +6,8 @@ Goals:
 1. Make a gui program that will take some user input and output a virus.
 2. Viruses can be ran through Veil to further obfustecate the signature
 3. Can Generate .exe, .bat files (soon will support many formats) - .bat files supported.
+4. viruses/payloads can be attached to other .exe's.
+5. Information gathered can be emailed.
 
 
 TODO:
@@ -13,9 +15,10 @@ TODO:
 2. Support '.py' viruses -- Write a bunch of viruses in python and then add them as resources for this project.
 3. Embed viruses in other programs.
 4. Add a help wiki/Readme
-5. Add 'categories' of viruses i.e destructive, exfiltration, spying, etc.
-6. Add a disclaimer / legal notice
-7. Give credit to any who whose code I've borrowed (so far - PowerSploit)
+5. Add a disclaimer / legal notice
+6. Give credit to any who whose code I've borrowed (so far - PowerSploit)
+7. Change available viruses when a different category is chosen.
+8. Set up mail server that will email user on a regular basis.
  
 Logic:
 1. Take some user input about what kind of virus they want to generate
@@ -55,14 +58,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Net;
+using System.Net.Mail;
 
 namespace VirusGenerator
 {
     public partial class Troy : Form
     {
-
-
-
         // Init class level variables
         string _outputFolder;
         string _fileName;
@@ -158,14 +160,6 @@ namespace VirusGenerator
             }
             
 
-            if(CBoxAttack.Text == "Format Harddisk")
-            {
-                System.Diagnostics.Process formatHarddrive = new System.Diagnostics.Process();
-
-                DriveInfo di = 
-                
-            }
-
 
         } //Ends BtnGen_Click
 
@@ -221,8 +215,6 @@ namespace VirusGenerator
         {
             string attackSelected = CBoxAttack.Text;
 
-            //More code will go here.
-
             ToolStrip.Text = $"Attack Selected: '{attackSelected}'";
         }
 
@@ -236,8 +228,9 @@ namespace VirusGenerator
             Close(); //closes program from the menu stip.
         }
 
+        
         /// <summary>
-        /// Purpose: When a category is chosen, then the list of virus attacks are updated based on the category.
+        /// Purpose: This will change the available viruses depending on the category chosen.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -245,14 +238,12 @@ namespace VirusGenerator
         {
             if(CBoxCategory.Text == "Destructive")
             {
-                //CBoxAttack.S
-
-                ToolStrip.Text = $"Category chosen: '{CBoxCategory.Text}'";
+                //CBoxAttack.
             }
         }
 
         /// <summary>
-        /// Purpose: This is a button that allows the user to select the folder they want to output the virus to through an interface.
+        /// Purpose: Allows the user to specify where they want to save the virus to when clicked.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -266,9 +257,28 @@ namespace VirusGenerator
 
         }
 
+        /// <summary>
+        /// Purpose: This will be the help mesagebox when clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MnuStripHowToItem_Click(object sender, EventArgs e)
         {
-           
+           //Help Messagebox
         }
+
+        private void BtnEmail_Click(object sender, EventArgs e)
+        {
+            NetworkCredential cred = new NetworkCredential();
+            Form testDialog = new Form();
+
+            testDialog.ShowDialog();
+
+
+          
+           
+
+        
+    }
     }
 }
