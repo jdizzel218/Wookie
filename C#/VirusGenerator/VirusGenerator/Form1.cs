@@ -14,6 +14,8 @@ TODO:
 3. Embed viruses in other programs.
 4. Add a help wiki/Readme
 5. Add 'categories' of viruses i.e destructive, exfiltration, spying, etc.
+6. Add a disclaimer / legal notice
+7. Give credit to any who whose code I've borrowed (so far - PowerSploit)
  
 Logic:
 1. Take some user input about what kind of virus they want to generate
@@ -242,6 +244,11 @@ namespace VirusGenerator
             TxtBoxDes.Text = folderSelect.SelectedPath + "\\";
             ToolStrip.Text = $"Output folder changed to {folderSelect.SelectedPath}\\";
 
+        }
+
+        private void MnuStripHowToItem_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

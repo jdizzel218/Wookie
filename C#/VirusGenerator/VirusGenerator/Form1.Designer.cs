@@ -142,7 +142,7 @@
             // versionToolStripMenuItem
             // 
             this.versionToolStripMenuItem.Name = "versionToolStripMenuItem";
-            this.versionToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.versionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.versionToolStripMenuItem.Text = "Version";
             this.versionToolStripMenuItem.Click += new System.EventHandler(this.versionToolStripMenuItem_Click);
             // 
@@ -157,8 +157,9 @@
             // MnuStripHowToItem
             // 
             this.MnuStripHowToItem.Name = "MnuStripHowToItem";
-            this.MnuStripHowToItem.Size = new System.Drawing.Size(138, 22);
+            this.MnuStripHowToItem.Size = new System.Drawing.Size(152, 22);
             this.MnuStripHowToItem.Text = "How To Use";
+            this.MnuStripHowToItem.Click += new System.EventHandler(this.MnuStripHowToItem_Click);
             // 
             // BtnExit
             // 
