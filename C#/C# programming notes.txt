@@ -14,14 +14,14 @@ orphan - an object whose reference has been lost.
 //Notes
 I. Value-Type (light weight objects)
 	a. Each variable is a bucket that is a certain size and shape.
-	b. int - size: 32 bits, shape: integer, value: ? (? = garbage).
+	b. int - size: 32 bits ( or 4 bytes), shape: integer, value: ? (? = garbage).
 		1. Garbage in => Garbage out.
-	c. double - size: 64 bits, shape: floating point, value: ?.
-	d. char   - size: 16 bits, shape: Unicode character
-	e. bool   - size: 8 bits,  shape: integer
+	c. double - size: 64 bits(8 bytes), shape: floating point, value: ?.
+	d. char   - size: 16 bits(2 bytes), shape: Unicode character
+	e. bool   - size: 8 bits(1 byte),  shape: integer
 
 II. Reference-Type (Regular objects)
-	a. string - size: 32 bits, shape: object, value: ?
+	a. string - size: 32 bits(4 bytes), shape: object, value: ?
 	b. console
 	c. math 
 
