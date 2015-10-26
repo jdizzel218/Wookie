@@ -98,6 +98,11 @@ namespace Lab_06
         {
             Close(); //Closes the program when clicked
         }
+        /// <summary>
+        /// Purpose: Display an about message when clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void MnuStripAboutItem_Click(object sender, EventArgs e)
         {

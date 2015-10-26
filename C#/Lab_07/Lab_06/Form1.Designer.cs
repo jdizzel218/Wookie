@@ -52,6 +52,7 @@
             // 
             // TxtTurns
             // 
+            this.TxtTurns.Enabled = false;
             this.TxtTurns.Location = new System.Drawing.Point(119, 112);
             this.TxtTurns.Name = "TxtTurns";
             this.TxtTurns.Size = new System.Drawing.Size(100, 20);
@@ -98,14 +99,14 @@
             // MnuStripExitItem
             // 
             this.MnuStripExitItem.Name = "MnuStripExitItem";
-            this.MnuStripExitItem.Size = new System.Drawing.Size(152, 22);
+            this.MnuStripExitItem.Size = new System.Drawing.Size(140, 22);
             this.MnuStripExitItem.Text = "Exit (alt + f4)";
             this.MnuStripExitItem.Click += new System.EventHandler(this.MnuStripExitItem_Click);
             // 
             // MnuStripAboutItem
             // 
             this.MnuStripAboutItem.Name = "MnuStripAboutItem";
-            this.MnuStripAboutItem.Size = new System.Drawing.Size(152, 22);
+            this.MnuStripAboutItem.Size = new System.Drawing.Size(140, 22);
             this.MnuStripAboutItem.Text = "About";
             this.MnuStripAboutItem.Click += new System.EventHandler(this.MnuStripAboutItem_Click);
             // 
