@@ -28,29 +28,21 @@ namespace Lab_14
 {
     class RightTriangle
     {
-        double _sideA;
-        double _sideB;
+        
         const double _ANGLE = 90;
         const int AREA_FORMULA = 2;
-
-        public RightTriangle()
-        {
-            //Default constructor
-            _sideA = 0;
-            _sideB = 0;
-        }
 
         /// <summary>
         /// Purpose: Gets or Sets the variable _sideA
         /// </summary>
-        public int SideA
+        public double SideA
         {
             get; set;
         }
         /// <summary>
         /// Purpose: Gets or Sets the variable _sideB
         /// </summary>
-        public int SideB
+        public double SideB
         {
             get; set;
         }
@@ -61,11 +53,11 @@ namespace Lab_14
         /// <param name="sideA"></param>
         /// <param name="sideB"></param>
         /// <returns></returns>
-        public double CalcHypotenuse(double sideA, double sideB)
+        public double CalcHypotenuse()
         {
             //This is where you use the pythagreom theorem to calculate the hypontenuse
             // a^2 * b^2 = c^2
-            double hyp = Math.Sqrt((sideA * sideA) + (sideB * sideB));
+            double hyp = Math.Sqrt((SideA * SideA) + (SideB * SideB));
             return hyp; //Return the hypontenuse.
         }
 
@@ -75,12 +67,12 @@ namespace Lab_14
         /// <param name="length"></param>
         /// <param name="height"></param>
         /// <returns></returns>
-        public double CalcArea(double length, double height)
+        public double CalcArea()
         {
             // calculate the area of the triangle.
             // Using this formula: A = height * length / 2
 
-            double area = (height * length) / AREA_FORMULA;
+            double area = (SideA * SideB) / AREA_FORMULA;
 
             return area;
         }

@@ -35,10 +35,7 @@ namespace Lab_14
 {
     public partial class FrmMain : Form
     {
-        RightTriangle _tri;
-        double sideA;
-        double sideB;
-
+        
         /// <summary>
         /// Purpose: Main Entry point of program.
         /// </summary>
@@ -52,32 +49,35 @@ namespace Lab_14
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BtrnCalc_Click(object sender, EventArgs e)
+        private void BtnCalc_Click(object sender, EventArgs e)
         {
-            if(double.TryParse(TxtSideA.Text, out sideA))
+           
+            double sideA;
+            double sideB;
+            if (double.TryParse(TxtSideA.Text, out sideA))
             {
-                if(double.TryParse(TxtSideB.Text, out sideB))
+                if (double.TryParse(TxtSideB.Text, out sideB))
                 {
-                    if(sideA > 0 && sideB > 0)
+                    if (sideA > 0 && sideB > 0)
                     {
-                        _tri = new RightTriangle();
+                        RightTriangle _tri = new RightTriangle { SideA = sideA, SideB = sideB };
 
-                        TxtHypotenuse.Text = _tri.CalcHypotenuse(sideA, sideB).ToString("#.##");
-                        TxtArea.Text = _tri.CalcArea(sideA, sideB).ToString("#.##");
+                        TxtHypotenuse.Text = _tri.CalcHypotenuse().ToString("#.##");
+                        TxtArea.Text = _tri.CalcArea().ToString("#.##");
                     }
                     else
                     {
                         MessageBox.Show("You have either entered in a negative value or zero which is incorrect.\nPlease enter a valid positive value.", "Notice");
                     }
-                   
+
                 }
                 else
                 {
                     MessageBox.Show("Make sure you put in a correct value", "Notice");
                 }
             }
-            
-            
+
+
         }
         /// <summary>
         /// Purpose: Closes program when clicked.
