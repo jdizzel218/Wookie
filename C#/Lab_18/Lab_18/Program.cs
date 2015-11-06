@@ -1,8 +1,8 @@
 ﻿// File/Project Prolog
 // Name: Matthew Cranford
 // CS 1400 Section 001
-// Project: Lab_18
-// Date: 11/5/2015 8:19 PM
+// Project: Lab_19
+// Date: 11/6/2015 2:10 PM
 //
 // I declare that the following code was written by me or provided 
 // by the instructor for this project. I understand that copying source
@@ -36,13 +36,54 @@ namespace Lab_18
 {
     class Program
     {
+        
         /// <summary>
-        /// Purpose: Main Entry point of program.
+        /// Purpose: Main Entry point of program, simulates rolling a pair of dice. Outputs reponse to user.
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
         {
+            // Create objects
 
+            Random random = new Random();
+
+            do
+            {
+                Console.WriteLine("Do you want to roll the dice?");
+                string response = Console.ReadLine().ToLower();
+
+                if (response.StartsWith("y"))
+                {
+                    int num1 = random.Next(1,7);
+                    int num2 = random.Next(1, 7);
+
+
+                    if (num1 == 6 && num2 == 6)
+                    {
+                        Console.WriteLine($"You rolled a {num1} and a {num2}");
+                        Console.WriteLine("You rolled boxcars!\n");
+                    }
+                    else if (num1 == 1 && num2 == 1)
+                    {
+                        Console.WriteLine($"You rolled a {num1} and a {num2}");
+                        Console.WriteLine("You rolled snake-eyes!\n");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"You rolled a {num1} and a {num2}\n");
+                    }
+                }
+                else if(response.StartsWith("n"))
+                {
+                    Console.WriteLine("Good Bye!");
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    Console.WriteLine("You have entered a invalid input. Please enter either a [y]es or a [n]o.\n");
+                }
+
+            } while (true);
 
         }
     }
