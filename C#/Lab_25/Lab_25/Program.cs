@@ -1,4 +1,15 @@
-﻿
+﻿// File/Project Prolog
+// Name: Matthew Cranford
+// CS 1400 Section 001
+// Project: Lab_25
+// Date: 12/4/2015 3:30 PM
+
+// I declare that the following code was written by me or provided 
+// by the instructor for this project. I understand that copying source
+// code from any other source constitutes cheating, and that I will receive
+// a zero on this project if I am found in violation of this policy.
+// ---------------------------------------------------------------------------
+
 
 /*
 Pseudo-Code:
@@ -9,15 +20,9 @@ Pseudo-Code:
 #5. As each int is read, store it in the array.
 #6. Write a method that takes an array as a parameter, that calculates and returns the average value of the arrays.
 #7. Output the average.
-
-
 */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static System.Console;
 using System.IO;
 
@@ -27,34 +32,71 @@ namespace Lab_25
     {
         
         const int SIZE = 50;
-        int[] _grades = new int[SIZE];
+        static int[] _grades = new int[SIZE];
+        /// <summary>
+        /// Purpose: Main Entry 
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
-            
+            WriteLine("Input from \'Grades.txt\':");
+            WriteLine("========================\n");
+            int counter = GetData();
+            int average = CalcGradeAverage(_grades,counter);
+
+
+            WriteLine($"\nThe average grade is: {average}.");
+
+            ReadKey(true);
         }
 
-
-
-        public void GetData()
+        /// <summary>
+        /// Purpose: Reads the data from the txt file and stores it in an array.
+        /// </summary>
+        /// <returns></returns>
+        static public int GetData()
         {
-            int grades;
+            string grades = "";
+            int counter = 0;
+            
             string file = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\grades.txt";
             StreamReader gradeFile = new StreamReader(file);
 
-
             do
             {
-                grades = int.Parse(gradeFile.ReadLine());
+
+                grades = gradeFile.ReadLine();
+                if (!string.IsNullOrEmpty(grades))
+                    _grades[counter] = int.Parse(grades);
+                else
+                    break;
+
+                
+                WriteLine(_grades[counter]);
+                counter++;
 
 
             } while (grades != null);
-            
+
+            return counter;
+
         }
-       public int CalcGradeAverage(int[] grades)
+
+        /// <summary>
+        /// Purpose: Calculates the average score by diving the sum of the grades by the number of grades.
+        /// </summary>
+        /// <param name="grades"></param>
+        /// <param name="arrayLength"></param>
+        /// <returns></returns>
+        static public int CalcGradeAverage(int[] grades, int arrayLength)
         {
-
-
-            return 0;
+            int average = 0;
+            for (int i = 0; i <= arrayLength; i++)
+            {
+                average += grades[i];
+            }
+            average = average / arrayLength;
+            return average;
         }
     }
 }

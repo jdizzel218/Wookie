@@ -25,6 +25,10 @@ namespace BowlingScores1
     {
         static void Main(string[] args)
         {
+            BowlTeam bowling = new BowlTeam();
+
+            bowling.GetData();
+            bowling.ParseData();
         }
 
 
