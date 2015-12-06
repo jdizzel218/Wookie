@@ -74,7 +74,7 @@ class Server():
 	This takes a connection as an arguement, asks the user for a command and then sends that command to the client.
 	'''
 	def SendCommand(self,sock):
-		command = str(raw_input("\nWhat command do you want to send: ?\n"))
+		command = str(raw_input("\nWhat command do you want to send: \n"))
 		sock.send(command)
 		return
 
@@ -90,9 +90,13 @@ class Server():
 	'''
 	def ListenResponse(self,sock):
 		while(True):
-			self.SendCommand(sock)
-			data = self.RecvData(sock)
-			print data
+			try:
+				self.SendCommand(sock)
+				data = self.RecvData(sock)
+				print "Response: %s" % str(data)
+			except:
+				print "An Error Occured or the response time was too long."
+				self.ListenResponse(sock)
 
 class Program():
 	'''
