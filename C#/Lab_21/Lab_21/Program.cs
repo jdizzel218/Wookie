@@ -1,9 +1,30 @@
-﻿using System;
+﻿// File/Project Prolog
+// Name: Matthew Cranford
+// CS 1400 Section 001
+// Project: Lab_21
+// Date: 12/4/2015 3:50 PM
+//
+// I declare that the following code was written by me or provided 
+// by the instructor for this project. I understand that copying source
+// code from any other source constitutes cheating, and that I will receive
+// a zero on this project if I am found in violation of this policy.
+// ---------------------------------------------------------------------------
+
+/*
+Pseudo-Code:
+#1. Take user input on the amount of change they want to calculate for (1-99)
+#2. Compute the number of 50 cent pieces you can take out of it, do this for quarters, dimes, nickels, and pennies.
+#3. Compute the new number to be passed in to the method.
+#4. Output to user.
+
+*/
+
+
+
+
+
+using System;
 using static System.Console;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab_21
 {
@@ -16,7 +37,7 @@ namespace Lab_21
         const int QUARTERS = 25;
         const int DIMES = 10;
         const int NICKELS = 5;
-        const int PENNIES = 10;
+        const int PENNIES = 1;
 
         static void Main(string[] args)
         {
@@ -66,8 +87,9 @@ namespace Lab_21
         static void ComputeChange(ref int changeValue, int coinValue, out int numberCoins)
         {
 
-            
-
+            numberCoins = changeValue / coinValue;
+            changeValue %= coinValue;
+           
 
         }
     }
