@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="33867127-e83f-4fd8-994b-8e14206aab74" name="TokenMachine" linkedPackageId="2c04f77e-c638-46c7-b652-29bd9d33ac3b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d4d3cabb-2618-402b-9ed3-c30b78a912d5" name="TokenMachine" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="eb9ceff0-e89e-4aa2-aaab-5bc7bbff02b3" />
+        <ownedAttributesInternal>
+          <property Id="a732ce5c-39ab-455b-a605-ca47a5ecb455" name="Attribute1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="767d5f70-71bc-4a28-a535-54d552eb8697" />
+          </property>
+          <property Id="3f3e515f-3269-4272-afa2-b96db4cd5a3c" name="_numQuarters" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="24dc7e3e-9e2a-41ae-820a-db6c9ee08622" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="afc82bb5-1304-4b23-a007-ce1f80f2f224" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="fa2fe11b-07d2-42d2-8c75-969f265409db" name="_numTokens" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="fdb1e4d7-9370-4df4-b6d1-26edf2bb3c45" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="afc82bb5-1304-4b23-a007-ce1f80f2f224" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="43079346-f5c1-4929-a151-a52dc8673e4c" name="Reset" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2e7bda5e-3c13-4504-b566-bdb9d74e406a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6a31dc4a-0b63-46d9-acc4-176c5526ea73" direction="Return" isUnique="false">
+                  <elementDefinition Id="8337d898-9b07-489c-944b-1c8c8b830012" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c2cc8704-3e5f-49f9-b3de-648cea7aa3c7" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a1374887-197d-4011-ac4d-6f4b2fd3d79f" name="TokenMachine" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="34ebb99d-6b71-4bc6-b4c6-5e1d87915753" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="afc82bb5-1304-4b23-a007-ce1f80f2f224" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="22d3ae76-7775-455c-a63e-3ab6e26b5486" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c2cc8704-3e5f-49f9-b3de-648cea7aa3c7" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="77328de0-33ab-4480-8e7a-e974f5335bd4" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="2c04f77e-c638-46c7-b652-29bd9d33ac3b" name="TokenMachineUML">
+    <elementDefinition Id="171c773d-0a2b-4923-9a13-18837dcbabd1" />
+    <profileInstances>
+      <packageHasProfileInstances Id="4eee6d4e-f960-40ce-aa8f-786806c3190c">
+        <profileInstance Id="9e6d6374-28a2-4a4b-ab50-6b0230ab2eca" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="679875e8-6464-4612-a1b5-321075349f2d">
+        <profileInstance Id="baca18be-2524-44b6-ac94-75c05d63253e" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="TokenMachine">
+  <logicalClassDesignerModelMoniker Id="33867127-e83f-4fd8-994b-8e14206aab74" />
+  <nestedChildShapes>
+    <classShape Id="f442ab1b-b843-484d-b2d8-5a8e086799da" absoluteBounds="3.5, 1.75, 1.5, 1.7031249602635703" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="d4d3cabb-2618-402b-9ed3-c30b78a912d5" LastKnownName="TokenMachine" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="2e4f731e-871c-4156-879e-bfa08274ba81" absoluteBounds="3.515, 2.14, 1.4700000000000002, 0.68164060264825832" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="edce34b5-dddd-4edf-a771-b29cd44ecb0f" absoluteBounds="3.515, 2.8316406026482586, 1.4700000000000002, 0.52148435761531187" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

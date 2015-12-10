@@ -2,7 +2,7 @@
 // Name: Matthew Cranford
 // CS 1400 Section 001
 // Project: Proj_06
-// Date: 11/3/2015 2:25 PM
+// Date: 12/7/2015 3:00 PM
 //
 // I declare that the following code was written by me or provided 
 // by the instructor for this project. I understand that copying source
@@ -36,7 +36,7 @@ namespace Proj_06
         const double EXP_SHIP_SUR = 5.00;
         const double SAME_SHIP_SUR = 8.00;
 
-        int NumItems;
+        int _numItems;
 
 
         /// <summary>
@@ -57,97 +57,104 @@ namespace Proj_06
             Shipping ship = new Shipping();
             string shipMethod = CBoxShipMethod.Text;
             string category = CBoxCategory.Text;
-            
-            if(int.TryParse(TxtNumItems.Text, out NumItems))
+
+            if (int.TryParse(TxtNumItems.Text, out _numItems))
             {
-                ship.NumItems = NumItems;
-                if (NumItems > 0)
-                {
-                    switch (shipMethod)
+                ship.NumItems = _numItems;
+                if (CBoxCategory.SelectedIndex >= 0)
+                    if (_numItems > 0)
                     {
-                        case "Standard":
-                            if (category == "A - Per Item")
-                            {
-                                if (RBtnSurchargeYes.Checked)
-                                    ship.Surcharge = STN_SHIP_SUR;
+                        switch (shipMethod)
+                        {
+                            case "Standard":
+                                if (category == "A - Per Item")
+                                {
+                                    if (RBtnSurchargeYes.Checked)
+                                        ship.Surcharge = STN_SHIP_SUR;
 
-                                ship.Category = STN_SHIP_A;
+                                    ship.Category = STN_SHIP_A;
 
-                                string total = $"Please pay: {ship.CalcShipping():C}";
+                                    string total = $"Please pay: {ship.CalcShipping():C}";
 
-                                MessageBox.Show(total, "Total");
+                                    MessageBox.Show(total, "Total");
 
-                            }
-                            else //Category == B
-                            {
-                                if (RBtnSurchargeYes.Checked)
-                                    ship.Surcharge = STN_SHIP_SUR;
+                                }
+                                else //Category == B
+                                {
+                                    if (RBtnSurchargeYes.Checked)
+                                        ship.Surcharge = STN_SHIP_SUR;
 
-                                ship.Category = STN_SHIP_B;
-                                string total = $"Please pay: {ship.CalcShipping():C}";
-                                MessageBox.Show(total, "Total");
-                            }
-                            break;
+                                    ship.Category = STN_SHIP_B;
+                                    string total = $"Please pay: {ship.CalcShipping():C}";
+                                    MessageBox.Show(total, "Total");
+                                }
+                                break;
 
-                        case "Express":
+                            case "Express":
 
-                            if (category == "A - Per Item")
-                            {
-                                if (RBtnSurchargeYes.Checked)
-                                    ship.Surcharge = EXP_SHIP_SUR;
+                                if (category == "A - Per Item")
+                                {
+                                    if (RBtnSurchargeYes.Checked)
+                                        ship.Surcharge = EXP_SHIP_SUR;
 
-                                ship.Category = EXP_SHIP_A;
-                                string total = $"Please pay: {ship.CalcShipping():C}";
-                                MessageBox.Show(total, "Total");
-                            }
-                            else //Category == B
-                            {
-                                if (RBtnSurchargeYes.Checked)
-                                    ship.Surcharge = EXP_SHIP_SUR;
+                                    ship.Category = EXP_SHIP_A;
+                                    string total = $"Please pay: {ship.CalcShipping():C}";
+                                    MessageBox.Show(total, "Total");
+                                }
+                                else //Category == B
+                                {
+                                    if (RBtnSurchargeYes.Checked)
+                                        ship.Surcharge = EXP_SHIP_SUR;
 
-                                ship.Category = EXP_SHIP_B;
-                                string total = $"Please pay: {ship.CalcShipping():C}";
-                                MessageBox.Show(total, "Total");
-                            }
-                            break;
+                                    ship.Category = EXP_SHIP_B;
+                                    string total = $"Please pay: {ship.CalcShipping():C}";
+                                    MessageBox.Show(total, "Total");
+                                }
+                                break;
 
-                        case "Same-Day":
-                            if (category == "A - Per Item")
-                            {
-                                if (RBtnSurchargeYes.Checked)
-                                    ship.Surcharge = SAME_SHIP_SUR;
+                            case "Same-Day":
+                                if (category == "A - Per Item")
+                                {
+                                    if (RBtnSurchargeYes.Checked)
+                                        ship.Surcharge = SAME_SHIP_SUR;
 
-                                ship.Category = SAME_SHIP_A;
-                                string total = $"Please pay: {ship.CalcShipping():C}";
-                                MessageBox.Show(total, "Total");
-                            }
-                            else //category == B
-                            {
-                                if (RBtnSurchargeYes.Checked)
-                                    ship.Surcharge = SAME_SHIP_SUR;
+                                    ship.Category = SAME_SHIP_A;
+                                    string total = $"Please pay: {ship.CalcShipping():C}";
+                                    MessageBox.Show(total, "Total");
+                                }
+                                else //category == B
+                                {
+                                    if (RBtnSurchargeYes.Checked)
+                                        ship.Surcharge = SAME_SHIP_SUR;
 
-                                ship.Category = SAME_SHIP_B;
-                                string total = $"Please pay: {ship.CalcShipping():C}";
-                                MessageBox.Show(total, "Total");
-                            }
-                            break;
-                        default:
-                            MessageBox.Show("You have selected an incorrect shipping method\nPlease try again.", "Error");
-                            break;
+                                    ship.Category = SAME_SHIP_B;
+                                    string total = $"Please pay: {ship.CalcShipping():C}";
+                                    MessageBox.Show(total, "Total");
+                                }
+                                break;
+                            default:
+                                MessageBox.Show("You have selected an incorrect shipping method\nPlease try again.", "Error");
+                                break;
+                        }
+                        
                     }
-                }
+                  
+                else
+                    {
+                        MessageBox.Show("You aren't shipping anything, so I guess it's free.", "FREEDOM!");
+                    }
                 else
                 {
-                    MessageBox.Show("You aren't shipping anything, so I guess it's free.", "FREEDOM!");
+                    MessageBox.Show("You need to select a category.", "Notice!");
                 }
             }
             else
             {
-                MessageBox.Show("You have entered an incorrect value.\nPlease try again.","Error");
+                MessageBox.Show("You have entered an incorrect value.\nPlease try again.", "Error");
             }
-           
-            
-            
+
+
+
         }
 
         /// <summary>

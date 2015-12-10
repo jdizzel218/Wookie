@@ -38,7 +38,7 @@
             this.LblNumItems = new System.Windows.Forms.Label();
             this.LblCategory = new System.Windows.Forms.Label();
             this.CBoxCategory = new System.Windows.Forms.ComboBox();
-            this.Mnu = new System.Windows.Forms.MenuStrip();
+            this.MnuStrip = new System.Windows.Forms.MenuStrip();
             this.MnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuExitItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuAboutItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +46,7 @@
             this.TxtNumItems = new System.Windows.Forms.TextBox();
             this.BtnExit = new System.Windows.Forms.Button();
             this.GBoxSurcharge.SuspendLayout();
-            this.Mnu.SuspendLayout();
+            this.MnuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnCalc
@@ -162,16 +162,16 @@
             this.CBoxCategory.TabIndex = 2;
             this.CBoxCategory.Text = "(Click to select)";
             // 
-            // Mnu
+            // MnuStrip
             // 
-            this.Mnu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MnuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MnuExit,
             this.MnuInstruc});
-            this.Mnu.Location = new System.Drawing.Point(0, 0);
-            this.Mnu.Name = "Mnu";
-            this.Mnu.Size = new System.Drawing.Size(394, 24);
-            this.Mnu.TabIndex = 5;
-            this.Mnu.Text = "menuStrip1";
+            this.MnuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MnuStrip.Name = "MnuStrip";
+            this.MnuStrip.Size = new System.Drawing.Size(394, 24);
+            this.MnuStrip.TabIndex = 5;
+            this.MnuStrip.Text = "menuStrip1";
             // 
             // MnuExit
             // 
@@ -238,15 +238,15 @@
             this.Controls.Add(this.LblShipMethod);
             this.Controls.Add(this.BtnExit);
             this.Controls.Add(this.BtnCalc);
-            this.Controls.Add(this.Mnu);
-            this.MainMenuStrip = this.Mnu;
+            this.Controls.Add(this.MnuStrip);
+            this.MainMenuStrip = this.MnuStrip;
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Red Fern Electronics";
             this.GBoxSurcharge.ResumeLayout(false);
             this.GBoxSurcharge.PerformLayout();
-            this.Mnu.ResumeLayout(false);
-            this.Mnu.PerformLayout();
+            this.MnuStrip.ResumeLayout(false);
+            this.MnuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,7 +263,7 @@
         private System.Windows.Forms.Label LblNumItems;
         private System.Windows.Forms.Label LblCategory;
         private System.Windows.Forms.ComboBox CBoxCategory;
-        private System.Windows.Forms.MenuStrip Mnu;
+        private System.Windows.Forms.MenuStrip MnuStrip;
         private System.Windows.Forms.ToolStripMenuItem MnuExit;
         private System.Windows.Forms.ToolStripMenuItem MnuExitItem;
         private System.Windows.Forms.ToolStripMenuItem MnuAboutItem;

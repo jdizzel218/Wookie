@@ -43,7 +43,6 @@
             this.RBtnSameDay.Name = "RBtnSameDay";
             this.RBtnSameDay.Size = new System.Drawing.Size(74, 17);
             this.RBtnSameDay.TabIndex = 0;
-            this.RBtnSameDay.TabStop = true;
             this.RBtnSameDay.Text = "Same-Day";
             this.RBtnSameDay.UseVisualStyleBackColor = true;
             this.RBtnSameDay.CheckedChanged += new System.EventHandler(this.RBtnSameDay_CheckedChanged);
@@ -51,6 +50,7 @@
             // RBtnExpress
             // 
             this.RBtnExpress.AutoSize = true;
+            this.RBtnExpress.Checked = true;
             this.RBtnExpress.Location = new System.Drawing.Point(6, 55);
             this.RBtnExpress.Name = "RBtnExpress";
             this.RBtnExpress.Size = new System.Drawing.Size(62, 17);
@@ -67,7 +67,6 @@
             this.RBtnStandard.Name = "RBtnStandard";
             this.RBtnStandard.Size = new System.Drawing.Size(68, 17);
             this.RBtnStandard.TabIndex = 0;
-            this.RBtnStandard.TabStop = true;
             this.RBtnStandard.Text = "Standard";
             this.RBtnStandard.UseVisualStyleBackColor = true;
             this.RBtnStandard.CheckedChanged += new System.EventHandler(this.RBtnStandard_CheckedChanged);
