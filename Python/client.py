@@ -89,6 +89,7 @@ class Client():
 	'''		
 	def RunCommand(self,cmd):
 		
+			
 		results = os.popen(cmd)
 		
 		return results.read()
@@ -108,8 +109,7 @@ class Client():
 				downloadedFile.write(data)
 				
 		conn.close()
-			
-		
+				
 		
 
 def main(args):
