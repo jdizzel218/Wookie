@@ -2,24 +2,20 @@
 // Name: Matthew Cranford
 // CS 1400 Section 001
 // Project: Proj_08
-// Date: 11/9/2015 3:48 PM
-//
+// Date: 12/10/2015 2:22 PM
+
 // I declare that the following code was written by me or provided 
 // by the instructor for this project. I understand that copying source
 // code from any other source constitutes cheating, and that I will receive
 // a zero on this project if I am found in violation of this policy.
 // ---------------------------------------------------------------------------
 
-
 /*
-
 Pseudo-Code:
 
 #1. When a user clicks on a button, simulate rolling a pair of die.
 #2. Create a dice class that handles anything that has to do with dice (i.e which side was rolled, rolling the dice, etc).
 #3. Display the output to the user using pictures, When the user rolls both 1's or 6's tell them that they rolled 'snake-eyes' or box-cars respectively.
- 
-
 
 */
 
@@ -42,14 +38,17 @@ namespace Proj_08
         Image side6 = new Bitmap(Properties.Resources.side6);
 
 
-        Dice dice = new Dice();
-
+        /// <summary>
+        /// Class Level Constants
+        /// </summary>
         const int SNAKE_EYES = 1;
-        const int ROLLED2    = 2;
-        const int ROLLED3    = 3;
-        const int ROLLED4    = 4;
-        const int ROLLED5    = 5;
-        const int BOX_CARS   = 6;
+        const int ROLLED2 = 2;
+        const int ROLLED3 = 3;
+        const int ROLLED4 = 4;
+        const int ROLLED5 = 5;
+        const int BOX_CARS = 6;
+
+        Dice dice = new Dice(); //Dice object.
 
 
         /// <summary>
@@ -67,17 +66,14 @@ namespace Proj_08
         /// <param name="e"></param>
         private void BtnRoll_Click(object sender, EventArgs e)
         {
-            
 
-            dice.RollDice();
-            DisplayPictureDice1();
-            DisplayPictureDice2();
-            
-            if (dice.Dice1 == SNAKE_EYES && dice.Dice2 == SNAKE_EYES)
+            dice.PlayGame();
+            DisplayPicture();
+            if (dice.DiceOne == SNAKE_EYES && dice.DiceTwo == SNAKE_EYES)
             {
                 LblDiceRoll.Text = "SNAKE-EYES!";
             }
-            else if (dice.Dice1 == BOX_CARS && dice.Dice2 == BOX_CARS)
+            else if (dice.DiceOne == BOX_CARS && dice.DiceTwo == BOX_CARS)
             {
                 LblDiceRoll.Text = "BOX-CARS!";
             }
@@ -85,8 +81,6 @@ namespace Proj_08
             {
                 LblDiceRoll.Text = "";
             }
-            
-
 
         }
 
@@ -111,12 +105,33 @@ namespace Proj_08
         }
 
         /// <summary>
-        /// Purpose: Displays the correct picture for LeftDie
+        /// Purpose: Displays an about box when called.
         /// </summary>
-        private void DisplayPictureDice1()
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MnuAboutItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Matthew Cranford\nCS1400 Section 001\nProject #8\nDice Game", "About");
+        }
+
+        /// <summary>
+        /// Purpose: Displays an instruction box when called.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MnuInstruc_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Click on the \"Roll 'Em\" button below to roll the dice!", "Insturctions");
+        }
+
+        /// <summary>
+        /// Purpose: Changes the pictures of the dice, to what you have rolled.
+        /// </summary>
+        private void DisplayPicture()
         {
 
-            switch (dice.Dice1)
+
+            switch (dice.DiceOne)
             {
                 case SNAKE_EYES:
                     PBoxLeftDie.Image = side1;
@@ -143,15 +158,7 @@ namespace Proj_08
                     break;
 
             }
-        }
-
-        /// <summary>
-        /// Purpose: Displays the correct picture for RightDie
-        /// </summary>
-        private void DisplayPictureDice2()
-        {
-
-            switch (dice.Dice2)
+            switch (dice.DiceTwo)
             {
                 case SNAKE_EYES:
                     PBoxRightDie.Image = side1;
@@ -178,26 +185,6 @@ namespace Proj_08
                     break;
 
             }
-        }
-
-        /// <summary>
-        /// Purpose: Displays an about box when called.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MnuAboutItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Matthew Cranford\nCS1400 Section 001\nProject #8\nDice Game", "About");
-        }
-
-        /// <summary>
-        /// Purpose: Displays an instruction box when called.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MnuInstruc_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Click on the \"Roll 'Em\" button below to roll the dice!", "Insturctions");
         }
     }
 }

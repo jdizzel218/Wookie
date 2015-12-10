@@ -60,15 +60,20 @@ class Server():
 	This creates a socket object, binds the server to a host and port, listens for connections, and returns the connection and address.
 	'''	
 	def StartServer(self, ipaddress,port,numConnections):
-		print "[+] Creating Server Object..."
-		server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		print "[+] Done!"
-		print "[+] Starting Server on port %s" % str(port)
-		server.bind((ipaddress,port))
-		print "[+] Listening for connections..."
-		server.listen(numConnections)
-		conn,address = server.accept()
-		return conn, address
+		try:
+			numConnected = 0
+			server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+			print "[+] Starting Server on port %s" % str(port)
+			server.bind((ipaddress,port))
+			print "[+] Listening for connections..."
+			while numConnected < numConnections :
+				server.listen(numConnections)
+				conn,address = server.accept()
+				numConnected += 1
+				print "[+] %s has connected from port %s" % address
+			return conn, address
+		except:
+			print "There was an error starting the server. Please restart the program."
 	
 	'''
 	This takes a connection as an arguement, asks the user for a command and then sends that command to the client.
@@ -93,8 +98,11 @@ class Server():
 			try:
 				self.SendCommand(sock)
 				data = self.RecvData(sock)
+				if data == 'exit':
+					return data
 				print "Response: %s" % str(data)
-			except:
+				
+			except socket.error as socketerror:
 				print "An Error Occured or the response time was too long."
 				self.ListenResponse(sock)
 
@@ -138,14 +146,14 @@ def main(args):
 	
 	try:
 		
-		connection, ipaddress = server.StartServer('127.0.0.1',8080,5) #attempt to start a server and return the connection and address associated with that connection.
+		connection, ipaddress = server.StartServer('127.0.0.1',8080,3) #attempt to start a server and return the connection and address associated with that connection.
+			
+		response = server.ListenResponse(connection) #Start communicating with the client. Send commands, and listen for the result.
 		
-		print "[+] %s has connected from port %s" % ipaddress
-	
-		server.ListenResponse(connection) #Start communicating with the client. Send commands, and listen for the result.
+		if response == 'exit':
+			program.StartOver()
 		
-		
-	except:
+	except socket.error as socketerror:
 		print "[!] Connection was shutdown by client."
 		program.StartOver()
 	

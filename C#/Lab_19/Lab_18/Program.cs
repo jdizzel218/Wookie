@@ -27,10 +27,6 @@ Do this all in a Do-While loop.
 */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab_18
 {
@@ -47,6 +43,14 @@ namespace Lab_18
 
             Random random = new Random();
 
+            //Class level Consts
+
+            const int HIGHEST_VALUE = 7;
+            const int LOWEST_VALUE = 1;
+
+            const int rolledSix = 6;
+            const int rolledOne = 1; // a different const for this one to make the code easier to read. So as not to confuse the programmer.
+
             do
             {
                 Console.WriteLine("Do you want to roll the dice?");
@@ -54,28 +58,29 @@ namespace Lab_18
 
                 if (response.StartsWith("y"))
                 {
-                    int num1 = random.Next(1,7);
-                    int num2 = random.Next(1, 7);
+                    int diceOne = random.Next(LOWEST_VALUE,HIGHEST_VALUE);
+                    int diceTwo = random.Next(LOWEST_VALUE, HIGHEST_VALUE);
 
 
-                    if (num1 == 6 && num2 == 6)
+                    if (diceOne == rolledSix && diceTwo == rolledSix)
                     {
-                        Console.WriteLine($"You rolled a {num1} and a {num2}");
+                        Console.WriteLine($"You rolled a {diceOne} and a {diceTwo}");
                         Console.WriteLine("You rolled boxcars!\n");
                     }
-                    else if (num1 == 1 && num2 == 1)
+                    else if (diceOne == rolledOne && diceTwo == rolledOne)
                     {
-                        Console.WriteLine($"You rolled a {num1} and a {num2}");
+                        Console.WriteLine($"You rolled a {diceOne} and a {diceTwo}");
                         Console.WriteLine("You rolled snake-eyes!\n");
                     }
                     else
                     {
-                        Console.WriteLine($"You rolled a {num1} and a {num2}\n");
+                        Console.WriteLine($"You rolled a {diceOne} and a {diceTwo}\n");
                     }
                 }
                 else if(response.StartsWith("n"))
                 {
                     Console.WriteLine("Good Bye!");
+                    Console.ReadKey(true);
                     Environment.Exit(0);
                 }
                 else
@@ -85,6 +90,7 @@ namespace Lab_18
 
             } while (true);
 
+            
         }
     }
 }

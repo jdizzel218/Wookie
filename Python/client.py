@@ -58,7 +58,6 @@ class Client():
 	def Connect(self):	
 		client = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #Socket object
 		client.connect(('127.0.0.1',8080)) #connect to the host on that port
-	
 		return client
 	
 	'''
@@ -80,8 +79,12 @@ class Client():
 	def ListenResponse(self,sock):
 		while(True):
 			cmd = self.RecvData(sock)
+			if cmd == 'exit':
+				sock.send('exit')
+				print "The connection has been shutdown by the server."
+				sys.exit()
 			results = self.RunCommand(cmd)
-			
+			print "A command has been ran."
 			self.SendData(sock,results)
 	
 	'''
@@ -110,6 +113,13 @@ class Client():
 				
 		conn.close()
 				
+class Commands():
+	'''
+	This class will hold all the necessary data for running commands on the client machine.
+	'''
+	def __init__(self):
+		return
+		
 		
 
 def main(args):
