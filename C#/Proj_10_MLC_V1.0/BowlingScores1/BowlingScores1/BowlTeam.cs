@@ -85,7 +85,7 @@ namespace BowlingScores1
             {
                 _names[index] = null;
                 _scores[index] = 0;
-                Console.WriteLine("You have entered in a bad input. Please try again.");
+                WriteLine("You have entered in a bad input. Please try again.");
                 return false;
 
             }
@@ -122,7 +122,7 @@ namespace BowlingScores1
 
 
             //Output to user.
-            Console.WriteLine($"\nHighest Score: {_names[highScoreIndex]} with {_scores[highScoreIndex]}\nLowest  Score: {_names[lowScoreIndex]} with {_scores[lowScoreIndex]}\nAverage Score: {average}");
+            WriteLine($"\nHighest Score: {_names[highScoreIndex]} with {_scores[highScoreIndex]}\nLowest  Score: {_names[lowScoreIndex]} with {_scores[lowScoreIndex]}\nAverage Score: {average}");
 
         }
 
