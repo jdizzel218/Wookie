@@ -23,14 +23,56 @@
 #  
 
 
-import opencv
-import numpy
+#################
+#   Libraries   #
+#################
+#import ImageGrab
+#import os
+#import time 
+#import win32api, win32con
+#import ImageOps
+#from numpy import *
+#import socket
+import smtplib
 
-def optical_reader():
-	pass
+
+class Alert():
+	
+	def __init__(self):
+		return
+		
+	def Email(self, sendTo, sendFrom):
+		
+		sender = str(sendTo)
+		receiver = str(sendFrom)
+		
+		message = """From: From Person <from@fromdomain.com>
+		To: To Person <to@todomain.com>
+		Subject: SMTP e-mail test
+		
+		
+		This is a test email message.
+		
+		
+"""
+		smtpObj = smtplib.SMTP('localhost')
+		smtpObj.sendmail(sender, receiver, message)
+		print "Succesfully send email!"
+		
+		
+		
+
+class Sniper():
+	
+	def __init__(self):
+		return
+	
+	
 
 def main():
+	alert = Alert()
 	
+	alert.Email("m.cranford13@gmail.com", "m.cranford13@gmail.com")
 	return 0
 
 if __name__ == '__main__':
