@@ -74,11 +74,12 @@ class Taxes {
 	// Post-conditions: None
 	// -----------------------------------------------------------------
 public:
-	double CalcTax(int income, char fileStatus) {
+	double calcTax(int income, string fileStatus) {
 
 		double tax = 0;
 
-		if (fileStatus == 's') {
+		if (fileStatus == "s") {
+			cout << "You are filing a single return ";
 			if (income <= SINGLE_TAXES_BRACKET_ONE) {
 				tax = (income)* SINGLE_TAX_RATE_BRACKET_ONE;
 			}
@@ -92,9 +93,10 @@ public:
 				tax = ((income - SINGLE_TAXES_BRACKET_THREE) * SINGLE_TAX_RATE_BRACKET_FOUR) + SINGLE_TAX_EXTRA_BRACKET_FOUR;
 			}
 		}
-		else if (fileStatus == 'm') {
+		else if (fileStatus == "m") {
+			cout << "You are filing a joint return ";
 			if (income <= MARRIED_TAX_BRACKET_ONE) {
-				tax = (income)* MARRIED_TAX_BRACKET_ONE;
+				tax = (income)* MARRIED_TAX_RATE_BRACKET_ONE;
 			}
 			else if (income > MARRIED_TAX_BRACKET_ONE && income <= MARRIED_TAX_BRACKET_TWO) {
 				tax = ((income - MARRIED_TAX_BRACKET_ONE) * MARRIED_TAX_RATE_BRACKET_TWO) + MARRIED_TAX_EXTRA_BRACKET_TWO;
@@ -110,57 +112,105 @@ public:
 		return tax;
 	}
 
-	void PrintTax(double tax) {
+	// Purpose: Formats & Prints income tax.
+	// Parameters: double tax
+	// Returns: void
+	// Pre-conditions: Needs return value from calcTax Function.
+	// Post-conditions: None
+	// -----------------------------------------------------------------
+	void printTax(double tax) {
 		cout.setf(ios::fixed);
 		cout.precision(2);
-		cout << "Your income tax will be: $" << tax << endl;
+		cout << "and your income tax will be: $" << tax << endl;
 	}
 };
 
 // Purpose: Main Entry point into program.
 // Parameters: None
-// Returns: None
+// Returns: 0 if program finishes without any errors.
 // Pre-conditions: None
 // Post-conditions: None
 // -----------------------------------------------------------------
-void main() {
+int main() {
 	Taxes taxFinder = Taxes();
-	int income;
-	char filingStatus;
-	bool isNumber = false;
-	bool marriedOrSingle = false;
+	int income = 0;
+	string filingStatus = "";
+	bool sentinel = false;
+	bool finished = false;
 
-	while (!(isNumber)) {
-		cout << "Please enter in your taxable income." << endl << "This must be a postive value: ";
+	do {
+		cout << "Please enter in your taxable income." << " This must be a postive value: " << endl;
+
 		cin >> income;
 
-		if (income > 0) {
-			isNumber = true;
-
-			while (!(marriedOrSingle)) {
-				cout << "Please enter a \"m\" if married and filing joint return,\nor an \"s\" if filing a single return: ";
-				cin >> filingStatus;
-
-				if (filingStatus == 'm' || filingStatus == 's') {
-					marriedOrSingle = true;
-					double tax = taxFinder.CalcTax(income, filingStatus);
-					taxFinder.PrintTax(tax);
-				}
-				else {
-					cin.clear();
-					cout << "You have entered an incorrect choice.\nPlease choose either [s]ingle or [m]arried";
-
-				}
-			}
-
+		if (!cin) {
+			cout << "You have entered in a non-numeric number." << " Please try again." << endl;
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
-		else {
-			cout << "You have entered in a number that's less than zero." << endl;
+
+		else if (income == 0) {
+			cout << "If you don't have any income, there is no point in trying." << endl;
 		}
-	}
-	
+	} while (income < 0 || income == 0);
+
+
+	do {
+		
+		cout << "Please enter a 'm' if filing as married, or an 's' if filing as single: " << endl;
+		cin >> filingStatus;
+
+		if (!cin) {
+			cout << "Invalid input." << " Please try again" << endl;
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+
+		else if (filingStatus == "m" || filingStatus == "s") {
+			sentinel = true;
+			double tax = taxFinder.calcTax(income, filingStatus);
+			taxFinder.printTax(tax);
+		}
+		
+	} while (!(sentinel));
+
 
 	system("pause");
 
+	do {
+		cout << "Would you like to calculate another tax calculation? [y/n]" << endl;
 
+		string tryAgain = "";
+
+		cin >> tryAgain;
+
+		if (tryAgain == "y" || tryAgain == "Y" || tryAgain == "yes") {
+			main();
+		}
+		else if (tryAgain == "n" || tryAgain == "N" || tryAgain == "no"){
+			cout << "Good-Bye!";
+			finished = true;
+			
+		}
+		else {
+			cout << "Invalid input" << " Please try again." << endl;
+		}
+
+		if (!cin) {
+			cout << "Invalid input" << " Please try again." << endl;
+		}
+		
+	} while (!(finished));
+	
+	return 0;
 }
+
+
+
+
+
+
+
+
+
+
