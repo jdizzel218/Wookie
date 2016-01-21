@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{9D387C26-294F-42F1-8852-C9B2CCABFF77}</ProjectGuid>
-    <RootNamespace>lab02</RootNamespace>
+    <ProjectGuid>{E36FE66D-8569-4B12-8759-D4B1A2786DC9}</ProjectGuid>
+    <RootNamespace>projec02</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -110,10 +110,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="lab02.cpp" />
+    <ClCompile Include="Author.cpp" />
+    <ClCompile Include="Book.cpp" />
+    <ClCompile Include="driver.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyHeader.h" />
+    <ClInclude Include="Author.h" />
+    <ClInclude Include="Book.h" />
+    <ClInclude Include="driver.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

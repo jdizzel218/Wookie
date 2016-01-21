@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{9D387C26-294F-42F1-8852-C9B2CCABFF77}</ProjectGuid>
-    <RootNamespace>lab02</RootNamespace>
+    <ProjectGuid>{46619921-5E3C-4D06-979B-01797298AC88}</ProjectGuid>
+    <RootNamespace>lab3</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -110,10 +110,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="lab02.cpp" />
+    <ClCompile Include="lab3.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyHeader.h" />
+    <ClInclude Include="Rectangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
