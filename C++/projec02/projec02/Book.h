@@ -2,31 +2,28 @@
 #ifndef Book_H
 #define Book_H
 
+using namespace std;
 
 class Book
 {
+public:
+	Book();
+	
+
+	Book(const Author&, const string&, int, double);
+	
+	Author GetAuthor() const;
+	string GetBookTitle()const;
+	int GetNumberOfPages()const;
+	double GetBookPrice() const;
+
+
 private:
+	Author theAuthor;
 	string _title;
 	int _numPages;
 	double _price;
 
-public:
-	Book()
-	{
-	
-	}
-
-	Book(string title, int numberOfPages, double bookPrice)
-	{
-		_title = title;
-		_numPages = numberOfPages;
-		_price = bookPrice;
-	
-	}
-
-	string GetBookTitle() { return _title; }
-	int GetNumberOfPages() { return _numPages; }
-	double GetBookPrice() { return _price; }
 
 };
 

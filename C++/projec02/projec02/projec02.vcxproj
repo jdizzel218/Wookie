@@ -113,7 +113,6 @@
     <ClCompile Include="Author.cpp" />
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="driver.cpp" />
-    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Author.h" />

@@ -8,11 +8,11 @@ using namespace std;
 class Book
 {
 private:
-	string _title = "";
+	string _title = "None";
 	int _numPages = 0;
 	double _price = 0.0;
 
-	Author bookAuthor = Author();
+	Author author;
 
 
 public:
@@ -23,7 +23,7 @@ public:
 		_price = 0.0;
 	}
 
-	Book::Book(string title, int numberOfPages, double price)
+	Book::Book(const Author& author, string title, int numberOfPages, double price)
 	{
 		_title = title;
 		_numPages = numberOfPages;

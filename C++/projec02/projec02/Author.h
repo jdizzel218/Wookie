@@ -1,25 +1,30 @@
 #pragma once
 #ifndef Author_H
 #define Author_H
+
+using namespace std;
+
 class Author
 {
-private:
-	string _name;
-	string _address;
 
 public:
 	Author()
 	{
-	
+
 	}
 
-	Author(string name, string address)
+	Author(const string&, const string&)
 	{
-	
+
 	}
 
-	string GetAuthorName() { return _name; }
-	string GetAuthorAddress() { return _address; }
+	string GetAuthorName() const;
+	string GetAuthorAddress() const;
+
+private:
+	string _name;
+	string _address;
+
 
 };
 
