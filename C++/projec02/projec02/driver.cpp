@@ -4,10 +4,15 @@
 // Driver code, Programming Project #2
 // =======================================
 #include "driver.h"
-#include "Author.h"
-#include "Book.h"
+
 using namespace std;
 
+// Purpose: Main entry point into program
+// Parameters: None
+// Returns: 0 
+// Pre-conditions: None
+// Post-conditions: None
+// -----------------------------------------------------------------
 int main()
 {
 
@@ -25,7 +30,7 @@ int main()
 	Book b3(p3, "The Hobbit",  322, 14.29);
 
 	// add the books to the vector
-	myBooks.push_back(b1 );
+	myBooks.push_back(b1);
 	myBooks.push_back(b2);
 	myBooks.push_back(b3);
 
@@ -37,8 +42,24 @@ int main()
 	return 0;
 }
 
+// Purpose: Output the books to the console
+// Parameters: vector of books
+// Returns: None
+// Pre-conditions: None
+// Post-conditions: None
+// -----------------------------------------------------------------
 void displayBooks(const vector<Book>& books)
 {
 
    // students need to write the code for this function
+	for (int i = 0; i < books.size(); i++)
+	{
+		cout << "\n";
+		cout << books[i].GetBookTitle() << endl;
+		cout << books[i].GetAuthor() << endl;
+		cout << books[i].GetNumberOfPages() << endl;
+		cout << books[i].GetBookPrice() << endl;
+		
+	}
+
 }
